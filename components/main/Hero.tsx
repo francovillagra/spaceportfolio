@@ -9,24 +9,27 @@ const Hero = () => {
         <div
           style={{
             position: 'absolute',
-            top: '-45%', // Ajusta la posición vertical
+            top: '10%', // Ajusta la posición vertical
             left: '50%',
             width: '120%', // Ajusta el tamaño del contenedor interno
             height: '120%', // Ajusta el tamaño del contenedor interno
-            
+            transform: 'translate(-50%, -50%) rotate(180deg) scale(0.6)', // Solo rotación, tamaño de la imagen de video y centrado
           }}
         >
           <video
-            autoPlay
-            muted
-            loop
+            autoPlay // Reproduce automáticamente
+            muted // Silencia el video (requerido para la reproducción)
+            loop // Repite el video en bucle
+            playsInline // Evita que el video se reproduza en pantalla completa en iOS
             style={{
               width: '100%',
               height: '100%',
-              objectFit: 'cover',
+              objectFit: 'cover', // Ajusta el video para cubrir el espacio sin distorsionarse
             }}
           >
             <source src='/blackhole.webm' type='video/webm' />
+            <source src='/blackhole.mp4' type='video/mp4' /> {/*Formato alternativo*/}
+            El navegador no soporta el elemento de video.
           </video>
         </div>
       </div>
