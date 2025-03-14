@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   background-color: #030014;
 }
@@ -21,6 +20,8 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  word-spacing: 4px;
 }
 
 .Welcome-box {
@@ -29,10 +30,29 @@ body {
   align-items: center;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  border-radius: 32px;
+  border-radius: 16px;
   box-shadow: inset 0 -7px 11px #a48fff1f;
   display: flex;
   position: relative;
   width: max-content;
+  padding: 8px 16px;
   transition: box-shadow 0.45s cubic-bezier(0.6, 0.6, 0, 1);
+  margin-left: 40px; /* Mueve el contenedor a la derecha */
+  margin-top: 10px; /* Mueve el contenedor hacia abajo */
+}
+
+/* Nuevo estilo agregado */
+h1.Welcome-text {
+  font-size: 20px; /* Tamaño de la fuente */
+  color: white; /* Color del texto */
+  font-family: 'Cedarville Cursive', cursive; /* Fuente personalizada */
+  background: linear-gradient(
+      0deg,
+      rgba(225, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    linear-gradient(90.01deg, #e59cff 0.01%, #9cb2ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
