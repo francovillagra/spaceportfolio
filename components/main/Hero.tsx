@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import HeroContent from '../sub/HeroContent';
 
 const Hero = () => {
   return (
@@ -13,25 +13,26 @@ const Hero = () => {
             left: '50%',
             width: '120%', // Ajusta el tamaño del contenedor interno
             height: '120%', // Ajusta el tamaño del contenedor interno
-            transform: 'translate(-50%, -50%) rotate(180deg) scale(0.6)', // Solo rotación, tamaño de la imagen de video y centrado
+            transform: 'translate(-50%, -50%) rotate(180deg) scale(0.6)',
           }}
         >
           <video
-            autoPlay // Reproduce automáticamente
-            muted // Silencia el video (requerido para la reproducción)
-            loop // Repite el video en bucle
-            playsInline // Evita que el video se reproduza en pantalla completa en iOS
+            autoPlay
+            muted
+            loop
+            playsInline
             style={{
               width: '100%',
-              height: '100%',
-              objectFit: 'cover', // Ajusta el video para cubrir el espacio sin distorsionarse
+              height: '110%',
+              objectFit: 'cover',
             }}
           >
             <source src='/blackhole.webm' type='video/webm' />
-            <source src='/blackhole.mp4' type='video/mp4' /> {/*Formato alternativo*/}
+            <source src='/blackhole.mp4' type='video/mp4' /> {/* Formato alternativo */}
             El navegador no soporta el elemento de video.
           </video>
-        </div>
+          <HeroContent />
+        </div> {/* Cierre del div interno */}
       </div>
 
       {/* Contenido sobre el video */}

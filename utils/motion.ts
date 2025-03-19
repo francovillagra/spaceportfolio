@@ -1,12 +1,12 @@
 export function slideInFromLeft(delay: number) {
     return {
-        hidden: { x: -100, opacity: 0 },
+        hidden: { x: -100, opacity: 0 }, // Inicia fuera de la pantalla (izquierda) y transparente
         visible: {
-            x: 0,
-            opacity: 1,
+            x: 0, // Se mueve a la posición original
+            opacity: 1, // Se hace visible
             transition: {
-                delay: delay,
-                duration: 0.5,
+                delay: delay, // Retraso antes de que comience la animación
+                duration: 0.5, // Duración de la animación
             },
         },
     };
