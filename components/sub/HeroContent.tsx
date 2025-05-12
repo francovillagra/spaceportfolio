@@ -1,90 +1,82 @@
-"use client"; // Solo si estás usando Next.js 13+
+"use client"; // ✅ Correcto para Next.js 13+
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { slideInFromTop, slideInFromLeft, slideInFromRight } from "@/utils/motion"; // Importa todas las animaciones
+import { slideInFromTop, slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-import Image from 'next/image'; // Importa Image de next/image
+import Image from 'next/image';
 
 const HeroContent = () => {
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
+      className="flex flex-row items-center justify-center px-20 mt-10 w-full z-[20]"
     >
       {/* Contenedor de la izquierda (texto) */}
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         {/* Sección del título */}
         <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={slideInFromTop(0.5)} // Animación de deslizamiento desde arriba
-          className="Welcome-box py-[8px] px-[4px] border border-[#7042f88b] opacity-[0.9]"
+          variants={slideInFromTop(0.5)}
+          className="Welcome-box py-2 px-1 border border-[#7042f88b] opacity-90 flex items-center"
         >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1
-            className="Welcome-text font-cursive"
-            style={{
-              fontSize: '10px', // Tamaño de la fuente
-              color: '#ffffff', // Color del texto
-              fontFamily: 'Arial, sans-serif', // Fuente
-              fontWeight: 'bold', // Texto en negrita
-              textTransform: 'uppercase', // Texto en mayúsculas
-              letterSpacing: '-1px', // Espacio entre letras
-            }}
-          >
+          <SparklesIcon className="text-[#b49bff] mr-1 h-4 w-4" />
+          <h1 className="text-[8px] text-white font-semibold uppercase tracking-tight font-sans">
             Portfolio Desarrollador Fullstack
           </h1>
         </motion.div>
 
         {/* Título principal */}
         <motion.div
-          initial="hidden" // Estado incial
-          animate="visible" // Estado final
-          variants={slideInFromLeft(0.5)} // Animación de deslizamiento desde la izquierda
+          variants={slideInFromLeft(0.5)}
           className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
-          Providing
+          Ofreciendo
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            The best
+            la mejor
           </span>
-          project experience
+          experiencia de proyecto
         </motion.div>
 
         {/* Descripción */}
         <motion.p
-          variants={slideInFromLeft(0.8)} // Animación de deslizamiento desde la izquierda
+          variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          I&apos;m a FullStack Developer. I enjoy programming and technology, building software applications, and exploring new ways to improve their efficiency.
- 
-       </motion.p>
+          Soy un Desarrollador fullstack. Disfruto de la Programación y la Ciberseguridad, creando aplicaciones de software y explorando nuevas maneras de mejorar su eficiencia.
+        </motion.p>
 
-        {/* Botón "Learn more" */}
+        {/* Botón "Saber más" */}
         <motion.a
-          variants={slideInFromLeft(1)} // Animación de deslizamiento desde la izquierda
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          variants={slideInFromLeft(1)}
+          className="bg-gradient-to-r from-purple-500 to-cyan-500 py-2 px-4 rounded-lg text-white text-center cursor-pointer hover:opacity-90 transition max-w-[200px]"
         >
           Saber más!
         </motion.a>
       </div>
 
-      {/* Contenedor de la derecha (imagen) */}
+{/* Contenedor de la derecha (imagen) */}
 <motion.div
-  variants={slideInFromRight(0.8)} // Animación de deslizamiento desde la derecha
-  className="w-1/2 h-full flex justify-end items-center" // Cambia justify-center a justify-end
+  variants={slideInFromRight(0.8)}
+  className="relative w-1/2 h-full flex justify-end items-start"
 >
-  <Image
-    src="/mainIconsdark.svg" // Ruta de la imagen
-    alt="work icons"
-    height={800} // Reducir el tamaño de la imagen
-    width={2300}
-    className="max-w-full h-auto" // Hacer la imagen responsive
-  />
-</motion.div>
-    </motion.div>
-  );
+  <div
+    className="relative"
+    style={{
+      transform: 'translateY(-800px) translateX(800px)',
+    }}
+  >
+    <Image
+      src="/mainIconsdark.svg"
+      alt="work icons"
+      height={500}
+      width={800}
+      className="object-contain"
+    />
+  </div>
+</motion.div> // </motion.div>
+
+);
 };
 
-export default HeroContent; // Exportación correcta
+export default HeroContent;
