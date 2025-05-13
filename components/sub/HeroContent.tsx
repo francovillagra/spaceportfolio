@@ -11,20 +11,21 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-10 w-full z-[20]"
+      className="flex flex-row items-center justify-center px-20 mt-0 w-full z-[20]"
     >
       {/* Contenedor de la izquierda (texto) */}
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         {/* Sección del título */}
-        <motion.div
-          variants={slideInFromTop(0.5)}
-          className="Welcome-box py-2 px-1 border border-[#7042f88b] opacity-90 flex items-center"
-        >
-          <SparklesIcon className="text-[#b49bff] mr-1 h-4 w-4" />
-          <h1 className="text-[8px] text-white font-semibold uppercase tracking-tight font-sans">
-            Portfolio Desarrollador Fullstack
-          </h1>
-        </motion.div>
+<motion.div
+  variants={slideInFromTop(0.5)}
+  className="Welcome-box py-2 px-1 border border-[#7042f88b] opacity-90 flex items-center"
+>
+  <SparklesIcon className="text-[#b49bff] mr-1 h-3 w-3" />
+  <h1 className="text-[10px] text-white font-medium uppercase tracking-tight font-sans">
+    Portfolio Desarrollador Fullstack
+  </h1>
+</motion.div>
+
 
         {/* Título principal */}
         <motion.div

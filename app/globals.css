@@ -33,7 +33,7 @@
 
 .Welcome-box {
   @apply relative overflow-hidden backdrop-blur-[8px] flex items-center w-max;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   margin-left: 2.5rem;
   margin-top: 0.625rem;
   border-radius: 1rem;

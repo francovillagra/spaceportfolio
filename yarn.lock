@@ -488,15 +488,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:^14.2.15":
-  version: 14.2.15
-  resolution: "@next/font@npm:14.2.15"
-  peerDependencies:
-    next: "*"
-  checksum: 10c0/771061e60465c8b61dc3a959b2086faa88b1e0e975f6442341e8f54b6083458d2130148a9430bffa10886dd5d74b18f91254d7e47b677204f742798b85fbbed1
-  languageName: node
-  linkType: hard
-
 "@next/swc-darwin-arm64@npm:15.3.1":
   version: 15.3.1
   resolution: "@next/swc-darwin-arm64@npm:15.3.1"
@@ -4980,7 +4971,6 @@ __metadata:
     "@fontsource/cedarville-cursive": "npm:^5.2.5"
     "@fontsource/inter": "npm:^5.2.5"
     "@heroicons/react": "npm:^2.2.0"
-    "@next/font": "npm:^14.2.15"
     "@react-three/drei": "npm:^10.0.4"
     "@react-three/fiber": "npm:^9.1.0"
     "@tailwindcss/postcss": "npm:^4.1.4"

@@ -9,7 +9,7 @@ const Hero = () => {
         <div
           className="video-wrapper absolute w-full h-full transform"
           style={{
-            transform: 'translateY(-350px) rotate(180deg) scale(0.8)',  // lo rotás y lo escalás
+            transform: 'translateY(-400px) rotate(180deg) scale(0.8)',  // lo rotás y lo escalás
           }}
         >
           <video
