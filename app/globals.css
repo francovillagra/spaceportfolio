@@ -6,14 +6,16 @@
   :root {
     height: 100%;
   }
-  html, body {
-    @apply h-full; /* Usamos @apply aquí porque es seguro para elementos raíz */
-  }
-  body {
+
+  html,  body {
+    heigth: 100%;
+    min-height: 100%;
     @apply bg-[#030014] text-white antialiased m-0 p-0;
     overflow-x: hidden;
+    overflow-y: auto; /* <- Esto habilita el scroll vertical */
   }
 }
+
 
 /* Clases personalizadas - Versión optimizada para SSR */
 .Welcome-text {
