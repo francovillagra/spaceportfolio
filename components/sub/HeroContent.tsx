@@ -32,11 +32,13 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.5)}
           className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
-          Ofreciendo
+          <span>
+          Ofreciendo{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
             la mejor
+            </span>
           </span>
-          experiencia de proyecto
+          <span>experiencia de proyecto</span>
         </motion.div>
 
         {/* Descripción */}
@@ -44,7 +46,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Soy un Desarrollador fullstack. Disfruto de la Programación y la Ciberseguridad, creando aplicaciones de software y explorando nuevas maneras de mejorar su eficiencia.
+          Soy un Desarrollador Fullstack, disfruto de la Programación, el Desarrollo de Software, y la Ciberseguridad, creando aplicaciones y explorando nuevas maneras de mejorar su eficiencia.
         </motion.p>
 
         {/* Botón "Saber más" */}
