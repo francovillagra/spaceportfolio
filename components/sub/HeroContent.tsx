@@ -46,7 +46,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Soy un Desarrollador Fullstack, disfruto de la Programación, el Desarrollo de Software, y la Ciberseguridad, creando aplicaciones y explorando nuevas maneras de mejorar su eficiencia.
+          Soy Desarrollador Fullstack, disfruto de la Programación, el Desarrollo de Software, y la Ciberseguridad, creando aplicaciones y explorando nuevas maneras de mejorar su eficiencia.
         </motion.p>
 
         {/* Botón "Saber más" */}
