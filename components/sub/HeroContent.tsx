@@ -68,13 +68,13 @@ const HeroContent = () => {
   <div
     className="relative"
     style={{
-      transform: 'translateY(-800px) translateX(800px)',
+      transform: 'translateY(-70px) translateX(60px)',
     }}
   >
     <Image
       src="/mainIconsdark.svg"
       alt="work icons"
-      height={500}
+      height={600}
       width={800}
       className="object-contain"
     />
