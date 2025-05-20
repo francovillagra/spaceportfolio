@@ -30,16 +30,17 @@ const HeroContent = () => {
         {/* Título principal */}
 <motion.div
   variants={slideInFromLeft(0.5)}
-  className="flex flex-col gap-2 mt-6 text-5xl font-bold text-white w-full"
+  className="flex flex-col gap-3 mt-6 text-white max-w-[600px] w-auto h-auto leading-tight"
 >
-  <span className="whitespace-nowrap text-left">
+  <span className="font-sans text-5xl font-bold">
     Ofreciendo{" "}
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+    <span className="font-sans text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
       la mejor
     </span>
   </span>
-  <span className="text-left">experiencia de proyecto</span>
+  <span className="font-sans text-5xl font-bold">experiencia de proyecto</span>
 </motion.div>
+
 
 
         {/* Descripción */}
@@ -47,7 +48,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Soy Desarrollador Fullstack, disfruto de la Programación, el Desarrollo de Software, y la Ciberseguridad, creando aplicaciones y explorando nuevas maneras de mejorar su eficiencia.
+          Bienvenido a mi laboratorio digital, donde experimento con ideas, construyo soluciones y aprendo algo nuevo cada día. Disfruto resolver problemas con tecnología y transformar ideas en soluciones funcionales. Te invito a conocer mis proyectos.
         </motion.p>
 
         {/* Botón "Saber más" */}

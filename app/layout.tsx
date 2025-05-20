@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Open_Sans } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter ({ subsets: ['latin'] })
+const openSans = Open_Sans({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata: Metadata = {
   title: 'Space Portfolio',
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
   <body 
-    className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}>
+    className={`${inter.className} ${openSans.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}>
     {children}
   </body>
 </html>
