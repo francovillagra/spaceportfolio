@@ -63,20 +63,19 @@ const HeroContent = () => {
 {/* Contenedor de la derecha (imagen) */}
 <motion.div
   variants={slideInFromRight(0.8)}
-  className="relative w-1/2 h-full flex justify-end items-start"
+  className="relative w-full md:w-1/2 h-auto felx justify-center items-center"
 >
-  <div
-    className="relative"
+  <div className="relative w-[800px] h-auto"
     style={{
-      transform: 'translateY(-70px) translateX(60px)',
+      transform: 'translateY(-10px) translateX(60px)',
     }}
   >
     <Image
       src="/mainIconsdark.svg"
       alt="work icons"
-      height={600}
-      width={800}
-      className="object-contain"
+      height={900}
+      width={600}
+      className="w-full h-auto object-contain"
     />
   </div>
 </motion.div> // </motion.div>
