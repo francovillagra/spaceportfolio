@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import Image from 'next/image'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 
 interface Props {
   src: string;
@@ -28,6 +28,8 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
     })
   }
 
+console.log("Rendering image", src);
+
   return (
     <motion.div
       ref={ref}
@@ -41,9 +43,10 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
         width={width}
         height={height}
         alt="skill image"
+        onError={(e) => console.error("Error loading image", src)}
       />
     </motion.div>
-  )
-}
+  );
+};
 
-export default SkillDataProvider
+export default SkillDataProvider;
