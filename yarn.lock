@@ -607,9 +607,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-three/drei@npm:^10.0.4":
-  version: 10.0.6
-  resolution: "@react-three/drei@npm:10.0.6"
+"@react-three/drei@npm:^10.0.8":
+  version: 10.0.8
+  resolution: "@react-three/drei@npm:10.0.8"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
     "@mediapipe/tasks-vision": "npm:0.10.17"
@@ -627,7 +627,7 @@ __metadata:
     suspend-react: "npm:^0.1.3"
     three-mesh-bvh: "npm:^0.8.3"
     three-stdlib: "npm:^2.35.6"
-    troika-three-text: "npm:^0.52.0"
+    troika-three-text: "npm:^0.52.4"
     tunnel-rat: "npm:^0.1.2"
     use-sync-external-store: "npm:^1.4.0"
     utility-types: "npm:^3.11.0"
@@ -640,11 +640,11 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10c0/37046d55ede5a5fe50cf84087c881c53769a7639ab0f9ce56d5564da45c269b1867c22ffb25ff35be290fb6d976e41ffd7ee67b730ec65c330b8d7547acca5f4
+  checksum: 10c0/fc539abc4410140701a1f3d04bf982c82741f0584711a53282bc52625531a073153ede057bb0c4e14f00a586808e9ae726d8f250264ad5e980c6d4f6a979950d
   languageName: node
   linkType: hard
 
-"@react-three/fiber@npm:^9.1.0":
+"@react-three/fiber@npm:^9.1.2":
   version: 9.1.2
   resolution: "@react-three/fiber@npm:9.1.2"
   dependencies:
@@ -4971,8 +4971,8 @@ __metadata:
     "@fontsource/cedarville-cursive": "npm:^5.2.5"
     "@fontsource/inter": "npm:^5.2.5"
     "@heroicons/react": "npm:^2.2.0"
-    "@react-three/drei": "npm:^10.0.4"
-    "@react-three/fiber": "npm:^9.1.0"
+    "@react-three/drei": "npm:^10.0.8"
+    "@react-three/fiber": "npm:^9.1.2"
     "@tailwindcss/postcss": "npm:^4.1.4"
     "@types/node": "npm:^20"
     "@types/react": "npm:^19.1.2"
@@ -4984,6 +4984,7 @@ __metadata:
     framer-motion: "npm:^12.4.10"
     icons: "npm:^1.0.0"
     ionicons: "npm:^7.4.0"
+    maath: "npm:^0.10.8"
     next: "npm:^15.3.1"
     postcss: "npm:8"
     react: "npm:^19.1.0"
@@ -5375,7 +5376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"troika-three-text@npm:^0.52.0":
+"troika-three-text@npm:^0.52.4":
   version: 0.52.4
   resolution: "troika-three-text@npm:0.52.4"
   dependencies:
