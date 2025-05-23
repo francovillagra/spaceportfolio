@@ -175,7 +175,7 @@ export const Backend_skill = [
     {
         skill_name: "Fire base",
         Image: "/Firebase.png",
-        widht: 55,
+        width: 55,
         height: 55,
     },
     {
@@ -187,7 +187,7 @@ export const Backend_skill = [
     {
         skill_name: "My SQL",
         Image: "/mysql.png",
-        widht: 70,
+        width: 70,
         height: 70,
     },
     {
