@@ -33,7 +33,7 @@ export const Skill_data = [
         skill_name: "Redux",
         Image: "/redux.png",
         width: 80,
-        heigth: 80,
+        height: 80,
     },
     {
         skill_name: "React Query",
@@ -67,7 +67,7 @@ export const Skill_data = [
     },
     {
         skill_name: "Mongo db",
-        Image: "/mondgodb.png",
+        Image: "/mongodb.png",
         width: 80,
         height: 80,
     },

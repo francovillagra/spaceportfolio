@@ -10,7 +10,7 @@ import { Group } from 'three';
 const StarBackground = (props: any) => {
   const ref = useRef<Group>(null);
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(5000), { radius: 1.2 })
+    random.inSphere(new Float32Array(6000), { radius: 1.2 }) // 6000 % 3 ===0
   );
 
   useFrame((state, delta) => {
@@ -42,7 +42,7 @@ const StarBackground = (props: any) => {
 };
 
 const StarsCanvas = () => (
-  <div className="w-full h-auto fixed inset-0 z-[20]">
+  <div className="w-full fixed inset-0 z-0 pointer-events-none">
     <Canvas camera={{ position: [0, 0, 1] }}>
       <Suspense fallback={null}>
         <StarBackground />
