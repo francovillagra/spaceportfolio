@@ -13,20 +13,13 @@ interface Props {
 }
 
 const SkillDataProvider = ({ src, width, height, index }: Props) => {
-  const { ref, inView } = useInView({ triggerOnce: true })
   console.log(`SkillDataProvider: index ${index}`, { src, width, height }); // Agrego console.log para debuggear los datos
+
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   const imageVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (customIndex: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: customIndex * 0.3,
-        duration: 0.6,
-        ease: "easeOut"
-      })
-    }
+    visible: { opacity: 1, y: 0}
   };
 
   if (!src || typeof width !== 'number' || typeof height !== 'number') {
@@ -34,25 +27,28 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
     return null; // Esto previene el crash si src es undefined
   }
 
-console.log("Rendering image", src);
-
   return (
     <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      variants={imageVariants}
-      custom={index}
-    >
-      <Image
-        src={src}
-        width={width}
-        height={height}
-        alt="skill image"
-        onError={(e) => console.error("Error loading image", src)}
-      />
-    </motion.div>
-  );
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={imageVariants}
+        custom={index}
+        transition={{
+          delay: index * 0.3,
+          duration: 0.6,
+          ease: "easeOut"
+        }}
+        >
+          <Image
+            src={src}
+            width={width}
+            height={height}
+            alt="skill image"
+            onError={() => console.error("Error loading image", src)}
+          />
+        </motion.div>
+    );
 };
 
 export default SkillDataProvider;
