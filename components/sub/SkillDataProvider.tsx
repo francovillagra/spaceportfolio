@@ -21,8 +21,9 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0}
   };
-
-  if (!src || typeof width !== 'number' || typeof height !== 'number') {
+  
+    // Validar datos
+  if (!src || typeof src !== 'string' || typeof width !== 'number' || typeof height !== 'number' ) {
     console.error(`SkillDataProvider: Datos invalidos para index ${index}:`, { src, width, height});
     return null; // Esto previene el crash si src es undefined
   }
