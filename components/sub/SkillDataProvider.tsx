@@ -14,6 +14,7 @@ interface Props {
 
 const SkillDataProvider = ({ src, width, height, index }: Props) => {
   const { ref, inView } = useInView({ triggerOnce: true })
+  console.log(`SkillDataProvider: index ${index}`, { src, width, height }); // Agrego console.log para debuggear los datos
 
   const imageVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -24,8 +25,13 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
         delay: customIndex * 0.3,
         duration: 0.6,
         ease: "easeOut"
-      }
-    })
+      })
+    }
+  };
+
+  if (!src || typeof width !== 'number' || typeof height !== 'number') {
+    console.error(`SkillDataProvider: Datos invalidos para index ${index}:`, { src, width, height});
+    return null; // Esto previene el crash si src es undefined
   }
 
 console.log("Rendering image", src);
