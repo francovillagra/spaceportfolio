@@ -13,6 +13,19 @@ const Skills = () => {
       style={{ transform: 'scale(0.9)' }}
     >
       <SkillText />
+
+      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+  {Frontend_skill.map((image, index) => (
+    <SkillDataProvider
+      key={image.Image}  // usar key única como sugerí antes
+      src={image.Image}
+      width={image.width}
+      height={image.height}
+      index={index}
+          />
+        ))}
+      </div>
+      
       
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Skill_data.map((image, index) => (
