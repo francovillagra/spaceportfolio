@@ -21,7 +21,7 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0}
   };
-  
+
     // Validar datos
   if (!src || typeof src !== 'string' || typeof width !== 'number' || typeof height !== 'number' ) {
     console.error(`SkillDataProvider: Datos invalidos para index ${index}:`, { src, width, height});
@@ -46,6 +46,7 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
             width={width}
             height={height}
             alt="skill image"
+            style={{ height: 'auto' }} // Esto asegura que una dimensión sea automatica
             onError={() => console.error("Error loading image", src)}
           />
         </motion.div>
