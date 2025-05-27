@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Socials } from '@/constants/skillsData';
+import { Socials } from '@/constants/socialsData';
 
 const Navbar = () => {
   return (
