@@ -10,7 +10,7 @@ import { Group } from 'three';
 const StarBackground = (props: any) => {
   const ref = useRef<Group>(null);
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(6000), { radius: 1.2 }) // 6000 % 3 ===0
+    random.inSphere(new Float32Array(6000), { radius: 1.2 }) // 6000 % 3 === 0
   );
 
   useFrame((state, delta) => {

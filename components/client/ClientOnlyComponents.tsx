@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import dynamic from "next/dynamic";
-import React from "react";
+import dynamic from 'next/dynamic';
+import React from 'react';
+import VideoOverlay from '@/components/main/VideoOverlay';
 
-// Importamos los componentes con SSR deshabilitado
 const Navbar = dynamic(() => import('@/components/main/Navbar'), { ssr: false });
 const StarsCanvas = dynamic(() => import('@/components/main/StarBackground'), { ssr: false });
 
@@ -12,6 +12,7 @@ const ClientOnlyComponents = () => {
     <>
       <Navbar />
       <StarsCanvas />
+      <VideoOverlay />
     </>
   );
 };
