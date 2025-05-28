@@ -1,7 +1,7 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-import React from 'react';
+import dynamic from "next/dynamic";
+import React from "react";
 import VideoOverlay from '@/components/main/VideoOverlay';
 
 const Navbar = dynamic(() => import('@/components/main/Navbar'), { ssr: false });
@@ -10,9 +10,9 @@ const StarsCanvas = dynamic(() => import('@/components/main/StarBackground'), { 
 const ClientOnlyComponents = () => {
   return (
     <>
-      <Navbar />
       <StarsCanvas />
       <VideoOverlay />
+      <Navbar />
     </>
   );
 };
