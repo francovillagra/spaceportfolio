@@ -4,18 +4,16 @@ import React from 'react';
 
 const VideoOverlay = () => {
   return (
-    <div className="fixed top-0 left-0 w-full h-full z-10 pointer-events-none">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="w-full h-full object-cover opacity-70"
-      >
-        <source src="/blackhole.webm" type="video/webm" />
-
-      </video>
-    </div>
+    <video
+      className="fixed inset-0 w-full h-full object-cover z-[-1] pointer-events-none"
+      autoPlay
+      loop
+      muted
+      playsInline
+    >
+      <source src="/blackhole.webm" type="video/webm" />
+      Mi navegador no soporta la etiqueta de video
+    </video>
   );
 };
 
