@@ -52,8 +52,8 @@
 
 /* Agrego una máscara para el blackhole */
 .mask-blackhole {
-  mask-image: radial-gradient(circle at center, rgba(255, 255, 255, 1) 40%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: radial-gradient(circle at center, rgba(255, 255, 255, 1) 40%, rgba(0, 0, 0, 0) 100%);
+  mask-image: radial-gradient(circle at center, rgba(255, 255, 255, 1) 20%, rgba(0, 0, 0, 0) 50%);
+  -webkit-mask-image: radial-gradient(circle at center, rgba(255, 255, 255, 1) 20%, rgba(0, 0, 0, 0) 50%);
   mask-size: cover;
   mask-repeat: no-repeat;
   mask-position: center;

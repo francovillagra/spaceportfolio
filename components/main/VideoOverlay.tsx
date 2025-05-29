@@ -4,7 +4,7 @@ const VideoOverlay = () => {
   return (
     <div className="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none">
       <video
-        className="w-full h-full object-cover mask-blackhole mix-blend-screen opacity-80"
+        className="w-full h-full object-cover mix-blend-screen opacity-80 mask-blackhole"
         autoPlay
         loop
         muted
