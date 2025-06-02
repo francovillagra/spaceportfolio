@@ -28,7 +28,7 @@ const Encryption = () => {
         <div className= 'flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto'>
             <div className='flex flex-col items-center group cursor-pointer w-auto h-auto'>
                 <Image
-                src="LockTop.png"
+                src="/LockTop.png"
                 alt='Lock top'
                 width={50}
                 height={50}
@@ -36,7 +36,7 @@ const Encryption = () => {
                 />
 
                 <Image
-                src="LockMain.png"
+                src="/LockMain.png"
                 alt='Lock Main'
                 width={70}
                 height={70}
@@ -47,7 +47,7 @@ const Encryption = () => {
 
         </div>
 
-        <div className='w-[80%] flex items-start justify-center absolute'>
+        <div className='w-full flex items-start justify-center absolute'>
             <video 
                 loop
                 muted
@@ -55,6 +55,7 @@ const Encryption = () => {
                 playsInline
                 preload='false'
                 className='w-full h-auto'
+                src="/encryption.webm"
             />
 
         </div>
