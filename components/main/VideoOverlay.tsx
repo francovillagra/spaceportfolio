@@ -4,7 +4,7 @@ const VideoOverlay = () => {
   return (
     <div className="video-container mask-blackhole">
       <video
-        src="/blackhole.mp4" // Asegúrate de tener este video en public/
+        src="/blackhole.webm"
         autoPlay
         loop
         muted

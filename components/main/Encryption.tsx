@@ -1,13 +1,15 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { slideInFromTop } from '@/utils/motion'
-import Image from 'next/image'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { slideInFromTop } from '@/utils/motion';
+import Image from 'next/image';
 
 const Encryption = () => {
   return (
-    <div className='relative w-full h-full flex items-center justify-center z-10'>
+    <div className='relative w-full h-full flex items-center justify-center'>
+      
+      {/* Título animado */}
       <div className='absolute top-0 z-10'>
         <motion.div
           variants={slideInFromTop}
@@ -23,6 +25,7 @@ const Encryption = () => {
         </motion.div>
       </div>
 
+      {/* Íconos */}
       <div className='absolute z-20 flex flex-col items-center justify-center translate-y-[-50px]'>
         <div className='flex flex-col items-center group cursor-pointer'>
           <Image
@@ -42,6 +45,7 @@ const Encryption = () => {
         </div>
       </div>
 
+      {/* Video */}
       <div className='absolute w-full h-full z-0 overflow-hidden'>
         <video 
           loop
@@ -53,8 +57,9 @@ const Encryption = () => {
           src="/encryption.webm"
         />
       </div>
-    </div>
-  )
-}
 
-export default Encryption
+    </div>
+  );
+};
+
+export default Encryption;
