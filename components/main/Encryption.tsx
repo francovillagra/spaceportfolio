@@ -46,14 +46,15 @@ const Encryption = () => {
       </div>
 
       {/* Video */}
-      <div className='absolute w-full h-full z-0 overflow-hidden'>
+      <div className='absolute w-full h-full flex items-center justify-center'>
         <video 
           loop
           muted
           autoPlay
           playsInline
           preload="none"
-          className='w-full h-full object-cover mask-blackhole opacity-80 mix-blend-screen'
+          className='w-full h-full object-cover z-20'
+          style={{ zIndex: 50, position: 'absolute', top: 0, left: 0 }}
           src="/encryption.webm"
         />
       </div>
