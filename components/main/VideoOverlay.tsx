@@ -1,18 +1,16 @@
-'use client';
+import React from 'react';
 
 const VideoOverlay = () => {
   return (
-    <div className="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none">
+    <div className="video-container mask-blackhole">
       <video
-        className="w-full h-full object-cover mix-blend-screen opacity-80 mask-blackhole"
+        src="/blackhole.mp4" // Asegúrate de tener este video en public/
         autoPlay
         loop
         muted
         playsInline
-      >
-        <source src="/blackhole.webm" type="video/webm" />
-        Tu navegador no soporta la etiqueta de video.
-      </video>
+        className="video-container mask-blackhole"
+      />
     </div>
   );
 };

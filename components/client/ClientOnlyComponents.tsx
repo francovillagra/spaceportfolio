@@ -9,9 +9,9 @@ const VideoOverlay = dynamic(() => import('@/components/main/VideoOverlay'), { s
 const ClientOnlyComponents = () => {
   return (
     <>
-      <StarsCanvas />
-      <VideoOverlay />
-      <Navbar />
+      <StarsCanvas />  // Fondo - z-[-2]
+      <VideoOverlay /> // Blackhole - z-[-1]
+      <Navbar />      // Encima - z-10 o superior
     </>
   );
 };
