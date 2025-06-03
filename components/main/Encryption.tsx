@@ -7,8 +7,9 @@ import Image from 'next/image';
 
 const Encryption = () => {
   return (
-    <div className='relative w-full h-full flex items-center justify-center'>
-      
+    <div className='relative w-full h-full flex items-center justify-center z-10'>
+      <p className="text-white">TEST VIDEO</p> // Prueba para ver si Encryption se renderiza
+
       {/* Título animado */}
       <div className='absolute top-0 z-10'>
         <motion.div
@@ -46,7 +47,7 @@ const Encryption = () => {
       </div>
 
       {/* Video */}
-      <div className='absolute w-full h-full flex items-center justify-center'>
+      <div className='w-full min-h-[400px] object-cover opacity-80'>
         <video 
           loop
           muted
