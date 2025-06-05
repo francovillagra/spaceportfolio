@@ -10,14 +10,16 @@ const Encryption = () => {
     <div className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden z-10">
       
       {/* Video de fondo con mezcla */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-60 mix-blend-screen brightness-75"
-        src="/encryption.webm"
-        autoPlay
-        loop
-        muted
-        playsInline
+      <video 
+      loop
+      muted
+      autoPlay
+      playsInline
+      preload="none"
+      className='w-full h-full object-cover absolute top-0 left-0 z-10 mix-blend-screen opacity-[0.3] brightness-[0.4] grayscale-[0.3]'
+      src="/encryption.webm"
       />
+
 
       {/* Contenido centrado: candado arriba, texto debajo */}
       <div className="relative z-20 flex flex-col items-center justify-center gap-4">
