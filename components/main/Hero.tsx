@@ -13,25 +13,26 @@ const Hero = () => {
           }}
         >
           <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            aria-label="Video de fondo: agujero negro"
-            className="w-full h-full object-cover mix-blend-screen opacity-70 brightness-[0.6]"
-            style={{
-              maskImage: 'radial-gradient(circle at center, rgba(255,255,255,1) 40%, rgba(0,0,0,0.1) 90%)',
-              WebkitMaskImage: 'radial-gradient(circle at center, rgba(255,255,255,1) 40%, rgba(0,0,0,0.1) 90%)',
-              maskRepeat: 'no-repeat',
-              WebkitMaskRepeat: 'no-repeat',
-              maskSize: 'cover',
-              WebkitMaskSize: 'cover',
-            }}
-          >
-            <source src="/blackhole.webm" type="video/webm" />
-            <source src="/blackhole.mp4" type="video/mp4" />
-            Tu navegador no soporta el video.
-          </video>
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="Video de fondo: agujero negro"
+          className="w-full h-full object-cover mix-blend-screen"
+          style={{
+          maskImage: 'radial-gradient(circle at center, rgba(255,255,255,1) 20%, rgba(0,0,0,0.4) 85%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, rgba(255,255,255,1) 20%, rgba(0,0,0,0.4) 85%)',
+          maskRepeat: 'no-repeat',
+          WebkitMaskRepeat: 'no-repeat',
+          maskSize: 'cover',
+          WebkitMaskSize: 'cover',
+  }}
+>
+  <source src="/blackhole.webm" type="video/webm" />
+  <source src="/blackhole.mp4" type="video/mp4" />
+  Tu navegador no soporta el video.
+</video>
+
         </div>
       </div>
 

@@ -29,13 +29,14 @@ const StarBackground = (props: any) => {
         frustumCulled
         {...props}
       >
-        <PointMaterial
-          transparent
-          color="#fff"
-          size={0.002}
-          sizeAttenuation
-          depthWrite={false}
+        <pointsMaterial
+        color="#ffffff"
+        size={0.7}
+        sizeAttenuation
+        transparent
+        opacity={0.9}
         />
+
       </Points>
     </group>
   );
