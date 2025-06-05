@@ -1,42 +1,27 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { slideInFromTop } from "@/utils/motion";
-import Image from "next/image";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { slideInFromTop } from '@/utils/motion';
+import Image from 'next/image';
 
 const Encryption = () => {
   return (
-    <div className="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Video de fondo */}
+    <div className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden z-10">
+      
+      {/* Video de fondo con mezcla */}
       <video
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-60 mix-blend-screen brightness-75"
+        src="/encryption.webm"
+        autoPlay
         loop
         muted
-        autoPlay
         playsInline
-        preload="none"
-        src="/encryption.webm"
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-80 mix-blend-screen z-0"
       />
 
-      {/* Título */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[70%] z-20">
-        <motion.div
-          variants={slideInFromTop}
-          className="text-[40px] font-medium text-center text-gray-200"
-        >
-          <span className="font-sans text-5xl font-bold">
-            Performance{" "}
-            <span className="font-sans text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              &nbsp;&
-            </span>
-          </span>{" "}
-          <span className="font-sans text-5xl font-bold">Seguridad</span>
-        </motion.div>
-      </div>
-
-      {/* Candado */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
+      {/* Contenido centrado: candado arriba, texto debajo */}
+      <div className="relative z-20 flex flex-col items-center justify-center gap-4">
+        {/* Candado */}
         <div className="flex flex-col items-center group cursor-pointer">
           <Image
             src="/LockTop.png"
@@ -53,6 +38,22 @@ const Encryption = () => {
             className="z-10"
           />
         </div>
+
+        {/* Texto */}
+        <motion.div
+          variants={slideInFromTop}
+          initial="hidden"
+          animate="visible"
+          className="text-center text-gray-200 text-3xl font-semibold"
+        >
+          <span className="font-sans">
+            Performance{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+              &amp;
+            </span>{" "}
+            Seguridad
+          </span>
+        </motion.div>
       </div>
     </div>
   );
