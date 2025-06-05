@@ -9,17 +9,18 @@ const Hero = () => {
         <div
           className="video-wrapper absolute w-full h-full transform"
           style={{
-            transform: 'translateY(-480px) rotate(180deg) scale(0.8)',  // lo rotás y lo escalás
+            transform: 'translateY(-480px) rotate(180deg) scale(0.8)',  // Para rotar el video y escalar
           }}
         >
           <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            aria-label="Video de fondo: agujero negro"
-            className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="Video de fondo: agujero negro"
+          className="w-full h-full object-cover mix-blend-screen opacity-90 brightness-[0.7]"
           >
+
             <source src="/blackhole.webm" type="video/webm" />
             <source src="/blackhole.mp4" type="video/mp4" />
             Tu navegador no soporta el video.
