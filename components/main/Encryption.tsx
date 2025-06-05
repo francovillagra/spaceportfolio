@@ -16,7 +16,7 @@ const Encryption = () => {
       autoPlay
       playsInline
       preload="none"
-      className='w-full h-full object-cover absolute top-0 left-0 z-10 mix-blend-screen opacity-[0.3] brightness-[0.4] grayscale-[0.3]'
+      className="w-full h-full object-cover absolute top-0 left-0 z-10 mix-blend-screen opacity-[.5] brightness-[.85]"
       src="/encryption.webm"
       />
 
