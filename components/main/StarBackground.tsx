@@ -5,20 +5,27 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial, Preload } from '@react-three/drei';
 // @ts-ignore
 import * as random from 'maath/random/dist/maath-random.esm';
-import { Group } from 'three';
+import { Group, MathUtils } from 'three';
 
 const StarBackground = (props: any) => {
   const ref = useRef<Group>(null);
+  const materialRef = useRef<any>(null); // Referencia al PointMaterial
+
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(6000), { radius: 1.2 })
   );
-
-  console.log('sphere', sphere);
 
   useFrame((state, delta) => {
     if (ref.current) {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
+    }
+
+    // Animación de parpadeo sutil
+    if (materialRef.current) {
+      const time = state.clock.getElapsedTime();
+      const flicker = 0.85 + Math.sin(time * 2.0) * 0.15; // Rango entre 0.7 y 1
+      materialRef.current.opacity = MathUtils.clamp(flicker, 0.7, 1);
     }
   });
 
@@ -32,10 +39,11 @@ const StarBackground = (props: any) => {
         {...props}
       >
         <PointMaterial
+          ref={materialRef}
           color="#ffffff"
-          size={0.002}
-          sizeAttenuation
-          transparent
+          size={0.007}
+          sizeAttenuation={true}
+          transparent={true}
           opacity={1}
           depthWrite={false}
         />
