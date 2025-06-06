@@ -14,6 +14,7 @@ const StarBackground = (props: any) => {
   );
 
   useFrame((state, delta) => {
+    console.log('stars render');
     if (ref.current) {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
@@ -43,7 +44,7 @@ const StarBackground = (props: any) => {
 };
 
 const StarsCanvas = () => (
-  <div className="w-full fixed inset-0 z-0 pointer-events-none">
+  <div className="w-full fixed inset-0 z-[-10] pointer-events-none">
     <Canvas camera={{ position: [0, 0, 1] }}>
       <Suspense fallback={null}>
         <StarBackground />
