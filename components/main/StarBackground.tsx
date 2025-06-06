@@ -10,11 +10,12 @@ import { Group } from 'three';
 const StarBackground = (props: any) => {
   const ref = useRef<Group>(null);
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(6000), { radius: 1.2 }) // 6000 % 3 === 0
+    random.inSphere(new Float32Array(6000), { radius: 1.2 })
   );
 
+  console.log('sphere', sphere);
+
   useFrame((state, delta) => {
-    console.log('stars render');
     if (ref.current) {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
@@ -30,14 +31,14 @@ const StarBackground = (props: any) => {
         frustumCulled
         {...props}
       >
-        <pointsMaterial
-        color="#ffffff"
-        size={0.7}
-        sizeAttenuation
-        transparent
-        opacity={0.9}
+        <PointMaterial
+          color="#ffffff"
+          size={0.01}
+          sizeAttenuation
+          transparent
+          opacity={1}
+          depthWrite={false}
         />
-
       </Points>
     </group>
   );
