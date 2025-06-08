@@ -4991,7 +4991,7 @@ __metadata:
     react-dom: "npm:^19.1.0"
     react-intersection-observer: "npm:^9.16.0"
     tailwindcss: "npm:3.4.1"
-    three: "npm:^0.174.0"
+    three: "npm:^0.177.0"
     typescript: "npm:^5"
   languageName: unknown
   linkType: soft
@@ -5350,10 +5350,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three@npm:^0.174.0":
-  version: 0.174.0
-  resolution: "three@npm:0.174.0"
-  checksum: 10c0/704c3aaa72a7e97ad4f829e81870c8add856ab5a8fb4fc34e391033c527df5cb87a283edb88e69d2d6974bee8afe732c616e879081c8ea232103aa806b97793b
+"three@npm:^0.177.0":
+  version: 0.177.0
+  resolution: "three@npm:0.177.0"
+  checksum: 10c0/3e2ac1b9908e0d4dcecaf67c3d3e1b0b021dbfc7c80c2780005cc4e50532fb95b4c7f21669931e93c7b934d5576eb2364e1b34271bbd0e9484d1d723f836907b
   languageName: node
   linkType: hard
 

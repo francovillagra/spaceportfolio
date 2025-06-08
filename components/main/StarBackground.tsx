@@ -20,14 +20,14 @@ const StarBackground = (props: any) => {
     ref.current.rotation.x -= delta / 10;
     ref.current.rotation.y -= delta / 15;
 
-    // Animar opacidad de forma sutil
-    const time = state.clock.getElapsedTime();
-    const material = ref.current.children[0]?.material;
-    if (material) {
-      material.opacity = 0.7 + Math.sin(time * 2) * 0.2; // entre 0.5 y 0.9
+    // Twinkle: variamos la opacidad de forma suave
+    if (materialRef.current) {
+      const time = state.clock.getElapsedTime();
+      const flicker = 0.5 + Math.sin(time * 2.0) * 0.3; // entre 0.2 y 0.8
+      const smooth = MathUtils.lerp(materialRef.current.opacity, flicker, 0.05);
+      materialRef.current.opacity = smooth;
     }
-  }
-});
+  });
 
 
   return (
@@ -42,7 +42,7 @@ const StarBackground = (props: any) => {
         <PointMaterial
           transparent
           color="#ffffff"
-          size={0.005}
+          size={0.003}
           sizeAttenuation
           depthWrite={false}
         />
