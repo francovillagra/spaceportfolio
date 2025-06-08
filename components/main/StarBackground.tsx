@@ -3,13 +3,12 @@
 import React, { useState, useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial, Preload } from '@react-three/drei';
-// @ts-ignore
 import * as random from 'maath/random/dist/maath-random.esm';
 import { Group, MathUtils } from 'three';
 
 const StarBackground = (props: any) => {
   const ref = useRef<Group>(null);
-  const materialRef = useRef<any>(null); // Referencia al PointMaterial
+  const materialRef = useRef<any>(null);
 
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(6000), { radius: 1.2 })
@@ -20,11 +19,10 @@ const StarBackground = (props: any) => {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
 
-      // Twinkle: variamos la opacidad de forma suave
       if (materialRef.current) {
         const time = state.clock.getElapsedTime();
-        const flicker = 0.6 + Math.sin(time * 2.5) * 0.4; // entre 0.2 y 1.0
-        const smooth = MathUtils.lerp(materialRef.current.opacity, flicker, 0.05);
+        const flicker = 0.4 + Math.sin(time * 6.5) * 0.6; // más contraste y velocidad
+        const smooth = MathUtils.lerp(materialRef.current.opacity, flicker, 0.1); // parpadeo más dinámico
         materialRef.current.opacity = smooth;
       }
     }
@@ -42,7 +40,7 @@ const StarBackground = (props: any) => {
         <PointMaterial
           ref={materialRef}
           transparent
-          color="#aeefff" // blanco azulado para mas brillo
+          color="#ffffff"
           size={0.003}
           sizeAttenuation
           depthWrite={false}
@@ -64,3 +62,4 @@ const StarsCanvas = () => (
 );
 
 export default StarsCanvas;
+
