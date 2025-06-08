@@ -16,18 +16,19 @@ const StarBackground = (props: any) => {
   );
 
   useFrame((state, delta) => {
-    if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
-    }
+  if (ref.current) {
+    ref.current.rotation.x -= delta / 10;
+    ref.current.rotation.y -= delta / 15;
 
-    // Animación de parpadeo sutil
-    if (materialRef.current) {
-      const time = state.clock.getElapsedTime();
-      const flicker = 0.85 + Math.sin(time * 2.0) * 0.15; // Rango entre 0.7 y 1
-      materialRef.current.opacity = MathUtils.clamp(flicker, 0.7, 1);
+    // Animar opacidad de forma sutil
+    const time = state.clock.getElapsedTime();
+    const material = ref.current.children[0]?.material;
+    if (material) {
+      material.opacity = 0.7 + Math.sin(time * 2) * 0.2; // entre 0.5 y 0.9
     }
-  });
+  }
+});
+
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
@@ -39,14 +40,13 @@ const StarBackground = (props: any) => {
         {...props}
       >
         <PointMaterial
-          ref={materialRef}
+          transparent
           color="#ffffff"
-          size={0.007}
-          sizeAttenuation={true}
-          transparent={true}
-          opacity={1}
+          size={0.005}
+          sizeAttenuation
           depthWrite={false}
         />
+
       </Points>
     </group>
   );
