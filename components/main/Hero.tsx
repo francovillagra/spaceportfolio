@@ -20,7 +20,7 @@ const Hero = () => {
           aria-label="Video de fondo: agujero negro"
           className="w-full h-full object-cover mix-blend-screen"
          style={{
-            maskImage: 'radial-gradient(circle at center, rgba(255,255,255,1) 20%, rgba(0,0,0,0.1) 85%)',
+            maskImage: 'radial-gradient(circle at center, rgba(255,255,255,1) 25%, rgba(0,0,0,0.1) 90%)',
             WebkitMaskImage: 'radial-gradient(circle at center, rgba(255,255,255,1) 20%, rgba(0,0,0,0.1) 85%)',
             maskRepeat: 'no-repeat',
             WebkitMaskRepeat: 'no-repeat',
