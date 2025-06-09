@@ -7,7 +7,7 @@
       "esnext"
     ],
     "module": "esnext",
-    "moduleResolution": "node", // ¡Correcto para Next.js!
+    "moduleResolution": "node", // Correcto para Next.js
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -40,7 +40,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "globals.d.ts" // Añade esto para soporte de CSS/Tailwind
+    "globals.d.ts" // Para soporte de CSS/Tailwind
   ],
   "exclude": [
     "node_modules"
