@@ -43,7 +43,7 @@ const Encryption = () => {
 
         {/* Texto */}
         <motion.div
-          variants={slideInFromTop}
+          variants={slideInFromTop(0.2)} // Invocando la funcion con valor de delay
           initial="hidden"
           animate="visible"
           className="text-center text-gray-200 text-3xl font-semibold"
