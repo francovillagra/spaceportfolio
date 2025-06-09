@@ -13,6 +13,7 @@ module.exports = {
     'z-[-1]',
     'z-[-2]',
     'z-[-5]',
+    'text-white',
   ],
   theme: {
     extend: {
