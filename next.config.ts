@@ -1,23 +1,19 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  experimental: {
-    turbo: {
-      resolveAlias: {
-        'tailwindcss': require.resolve('tailwindcss'),
-        'postcss': require.resolve('postcss'),
-        'autoprefixer': require.resolve('autoprefixer'),
-        'three': require.resolve('three'),
-        '@react-three/fiber': require.resolve('@react-three/fiber')
-      },
-      
-      // CONFIGURACIÓN CORREGIDA DE LOADERS:
-      loaders: {
-        '.css': ['postcss'] // Ahora es un array como requiere Turbopack
-      }
+  // Nueva ubicación para configuración Turbopack
+  turbopack: {
+    resolveAlias: {
+      'tailwindcss': require.resolve('tailwindcss'),
+      'postcss': require.resolve('postcss'),
+      'autoprefixer': require.resolve('autoprefixer'),
+      'three': require.resolve('three'),
+      '@react-three/fiber': require.resolve('@react-three/fiber')
     },
-    optimizeCss: true,
-    optimizeServerReact: true
+    // Nueva sintaxis para reglas (reemplaza loaders)
+    rules: {
+      '*.css': ['postcss']
+    }
   },
 
   transpilePackages: [
