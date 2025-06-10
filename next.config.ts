@@ -1,35 +1,25 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // Configuración básica
-  reactStrictMode: true,
-  
-  // Configuración experimental para Turbopack
   experimental: {
     turbo: {
       resolveAlias: {
-        // Soluciona problemas comunes con Tailwind
         'tailwindcss': require.resolve('tailwindcss'),
         'postcss': require.resolve('postcss'),
         'autoprefixer': require.resolve('autoprefixer'),
-        
-        // Aliases para Three.js si es necesario
         'three': require.resolve('three'),
         '@react-three/fiber': require.resolve('@react-three/fiber')
       },
       
-      // Opciones adicionales de Turbopack
+      // CONFIGURACIÓN CORREGIDA DE LOADERS:
       loaders: {
-        '.css': 'postcss' // Asegura el procesamiento correcto de CSS
+        '.css': ['postcss'] // Ahora es un array como requiere Turbopack
       }
     },
-    
-    // Otras optimizaciones
-    optimizeCss: true, // Puedes activarlo con esta configuración
+    optimizeCss: true,
     optimizeServerReact: true
   },
 
-  // Transpilación de paquetes necesarios
   transpilePackages: [
     '@react-three/fiber',
     '@react-three/drei',
@@ -37,9 +27,8 @@ const nextConfig: NextConfig = {
     'maath'
   ],
 
-  // Configuración del compilador
   compiler: {
-    styledComponents: false // Mantener false si no usas esta librería
+    styledComponents: false
   }
 }
 
