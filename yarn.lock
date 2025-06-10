@@ -4947,7 +4947,7 @@ __metadata:
     react-dom: "npm:^19.1.0"
     react-intersection-observer: "npm:^9.16.0"
     tailwindcss: "npm:^4.1.8"
-    three: "npm:0.152.2"
+    three: "npm:^0.177.0"
     typescript: "npm:^5"
   languageName: unknown
   linkType: soft
@@ -5198,17 +5198,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three@npm:0.152.2":
-  version: 0.152.2
-  resolution: "three@npm:0.152.2"
-  checksum: 10c0/955948d241cf1770216eb30e419196124c1ae3aa4b76eb232b0de7795797b1ab0f6de91aa8f38b0ff780b21e4bb8fced0e6613862cb68b237330caccef7e4d11
-  languageName: node
-  linkType: hard
-
 "three@npm:^0.170.0":
   version: 0.170.0
   resolution: "three@npm:0.170.0"
   checksum: 10c0/eeaa1eccb31467654a044fb90634b3b6bb8d0768a4f029c082fb6aa22aec0d6362d0e3af74938caa1db512b7823a031b54a76e88fba6cfd535054165ea9667c9
+  languageName: node
+  linkType: hard
+
+"three@npm:^0.177.0":
+  version: 0.177.0
+  resolution: "three@npm:0.177.0"
+  checksum: 10c0/3e2ac1b9908e0d4dcecaf67c3d3e1b0b021dbfc7c80c2780005cc4e50532fb95b4c7f21669931e93c7b934d5576eb2364e1b34271bbd0e9484d1d723f836907b
   languageName: node
   linkType: hard
 
