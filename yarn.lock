@@ -1367,6 +1367,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/next@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@types/next@npm:9.0.0"
+  dependencies:
+    next: "npm:*"
+  checksum: 10c0/2148aadba745e6f094d33e483875656dece95e4049d7d99ce0ca0678035d1d48e73d6e2cba45e2b5fb0762bfd7b48587139d7ecf464876fb4fde9ff06cc249b8
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:^20":
   version: 20.19.0
   resolution: "@types/node@npm:20.19.0"
@@ -4105,7 +4114,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^15.3.3":
+"next@npm:*, next@npm:^15.3.3":
   version: 15.3.3
   resolution: "next@npm:15.3.3"
   dependencies:
@@ -4923,6 +4932,7 @@ __metadata:
     "@types/babel-plugin-macros": "npm:^3"
     "@types/babel__core": "npm:^7"
     "@types/dlv": "npm:^1"
+    "@types/next": "npm:^9.0.0"
     "@types/node": "npm:^20"
     "@types/react": "npm:^19.1.2"
     "@types/react-dom": "npm:^19.1.2"

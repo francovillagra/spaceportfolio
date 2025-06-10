@@ -33,6 +33,7 @@
     "@types/babel-plugin-macros": "^3",
     "@types/babel__core": "^7",
     "@types/dlv": "^1",
+    "@types/next": "^9.0.0",
     "@types/node": "^20",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
