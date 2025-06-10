@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "dev": "next dev --turbopack",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint",
-  "tailwind": "tailwindcss",
-  "tw:init": "tailwindcss init -p"
-},
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "tailwind": "tailwindcss",
+    "tw:init": "tailwindcss init -p"
+  },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -20,14 +20,14 @@
     "immer": "^10.1.1",
     "ionicons": "^7.4.0",
     "maath": "^0.10.8",
-    "next": "^15.3.1",
+    "next": "^15.3.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.27.4",
     "@eslint/eslintrc": "^3",
-    "@react-three/drei": "^10.0.8",
+    "@react-three/drei": "^10.1.2",
     "@react-three/fiber": "^9.1.2",
     "@tailwindcss/postcss": "^4.1.8",
     "@types/babel-plugin-macros": "^3",
