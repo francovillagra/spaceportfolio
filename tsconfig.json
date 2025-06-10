@@ -1,48 +1,25 @@
 {
   "compilerOptions": {
-    "target": "ES2020", // Actualizado para mejor soporte de Next.js 15
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "module": "esnext",
-    "moduleResolution": "node", // Correcto para Next.js
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve", // Mantener para Next.js
+    "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".", // Añadido para paths absolutos
+    "types": ["node"],
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ] // Configuración correcta para alias
-    },
-    "types": [
-      "framer-motion",
-      "node" // Añadido para soporte de Node.js
-    ],
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "forceConsistentCasingInFileNames": true // Evita errores en Windows
-    ,
-    "allowJs": true
+      "@/*": ["./src/*"]
+    }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "globals.d.ts" // Para soporte de CSS/Tailwind
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

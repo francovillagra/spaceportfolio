@@ -4,7 +4,6 @@ import path from 'path'
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   
-  // Configuración para Three.js y react-three-fiber
   transpilePackages: [
     '@react-three/fiber',
     '@react-three/drei',
@@ -12,7 +11,6 @@ const nextConfig: NextConfig = {
     'maath'
   ],
 
-  // Configuración de Webpack para resolver problemas de rutas en Windows
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -22,15 +20,15 @@ const nextConfig: NextConfig = {
     return config
   },
 
-  // Desactivar Turbopack temporalmente si es necesario
-  experimental: {
-    turbo: process.env.USE_TURBO === 'true' ? {
+  // Configuración turbo corregida
+  experimental: process.env.USE_TURBO === 'true' ? {
+    turbo: {
       resolveAlias: {
         'three': require.resolve('three'),
         '@react-three/fiber': require.resolve('@react-three/fiber')
       }
-    } : false
-  }
+    }
+  } : undefined // Usamos undefined en lugar de false
 }
 
 export default nextConfig
