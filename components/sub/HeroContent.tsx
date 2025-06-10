@@ -63,9 +63,10 @@ const HeroContent = () => {
 {/* Contenedor de la derecha (imagen) */}
 <motion.div
   variants={slideInFromRight(0.8)}
-  className="relative w-full md:w-1/2 h-auto felx justify-center items-center"
+  className="relative w-full md:w-1/2 h-auto flex justify-center items-center"
 >
-  <div className="relative w-[800px] h-auto"
+  <div
+    className="relative w-[800px] h-auto"
     style={{
       transform: 'translateY(-10px) translateX(60px)',
     }}
@@ -78,6 +79,8 @@ const HeroContent = () => {
       className="w-full h-auto object-contain"
     />
   </div>
+</motion.div> {/* ✅ Este es el correcto */}
+
 </motion.div>
 
 );
