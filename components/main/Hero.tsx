@@ -39,10 +39,11 @@ const Hero = () => {
 
       {/* Contenido sobre el video */}
       <HeroContent />
-      <div className="relative z-10 text-center text-white">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">Hero Section</h1>
-        <p className="text-lg md:text-xl">Search</p>
-      </div>
+      <div className="relative z-10 text-center text-white border border-red-500 p-4">
+  <h1 className="text-4xl md:text-6xl font-bold mb-4">Hero Section</h1>
+  <p className="text-lg md:text-xl">Search</p>
+</div>
+
     </div>
   );
 };
