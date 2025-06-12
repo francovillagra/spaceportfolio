@@ -1,10 +1,30 @@
 import './globals.css'
 import { Inter, Open_Sans } from 'next/font/google'
 import { ReactNode } from 'react'
-import ClientOnlyComponents from '@/components/client/ClientOnlyComponents'
+import dynamic from 'next/dynamic'
 
-const inter = Inter({ subsets: ['latin'] })
-const openSans = Open_Sans({ subsets: ['latin'], weight: ['400', '700'] })
+// Fuentes optimizadas
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap'
+})
+
+const openSans = Open_Sans({ 
+  subsets: ['latin'], 
+  weight: ['400', '700'],
+  variable: '--font-open-sans',
+  display: 'swap'
+})
+
+// Carga dinámica del componente que requiere Three.js
+const ClientOnlyComponents = dynamic(
+  () => import('@/components/client/ClientOnlyComponents'),
+  { 
+    ssr: false,
+    loading: () => <div className="fixed inset-0 bg-black z-[-1]" /> // Placeholder para el fondo de estrellas
+  }
+)
 
 export const metadata = {
   title: 'Mi Portafolio',
@@ -13,9 +33,9 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es">
-      <body className={`${inter.className} ${openSans.className}`}>
-        <ClientOnlyComponents /> // Acá se renderiza StarCanvas (el fondo de estrellas)
+    <html lang="es" className={`${inter.variable} ${openSans.variable}`}>
+      <body>
+        <ClientOnlyComponents />
         {children}
       </body>
     </html>
