@@ -3,19 +3,15 @@ import path from 'path'
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  
-  // Paquetes que necesitan transpilación
-  transpilePackages: [
+
+  // Para Turbopack: usar solo serverExternalPackages
+  serverExternalPackages: [
     '@react-three/fiber',
     '@react-three/drei',
     'three',
     'maath'
   ],
 
-  // Nueva ubicación para paquetes externos
-  serverExternalPackages: ['three', '@react-three/fiber'],
-
-  // Configuración de Webpack (elimina esmExternals)
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -26,10 +22,9 @@ const nextConfig: NextConfig = {
     return config
   },
 
-  // Opcional: Desactiva Turbopack si prefieres Webpack
-  // experimental: {
-  //   turbo: false
-  // }
+  experimental: {
+    turbo: {} // ✅ Formato correcto en Next.js 15+
+  }
 }
 
 export default nextConfig
