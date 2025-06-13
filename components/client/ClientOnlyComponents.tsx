@@ -1,18 +1,19 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { ReactNode } from 'react';
 
-// Ya estamos en un componente cliente, no hace falta `ssr: false`
 const Navbar = dynamic(() => import('@/components/main/Navbar'));
 const StarsCanvas = dynamic(() => import('@/components/main/StarBackground'));
 const VideoOverlay = dynamic(() => import('@/components/main/VideoOverlay'));
 
-const ClientOnlyComponents = () => {
+const ClientOnlyComponents = ({ children }: { children?: ReactNode }) => {
   return (
     <>
-      <StarsCanvas />  {/* Fondo - z-[-2] */}
-      <VideoOverlay /> {/* Blackhole - z-[-1] */}
-      <Navbar />       {/* Encima - z-10 o superior */}
+      <StarsCanvas />
+      <VideoOverlay />
+      <Navbar />
+      <main className="relative z-10">{children}</main> {/* Aquí va tu contenido principal */}
     </>
   );
 };

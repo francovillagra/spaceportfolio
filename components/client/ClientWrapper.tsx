@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic';
 
-// Aquí sí se puede usar ssr: false
 const ClientOnlyComponents = dynamic(
   () => import('@/components/client/ClientOnlyComponents'),
   {
@@ -11,8 +10,8 @@ const ClientOnlyComponents = dynamic(
   }
 );
 
-const ClientWrapper = () => {
-  return <ClientOnlyComponents />;
+const ClientWrapper = ({ children }: { children: React.ReactNode }) => {
+  return <ClientOnlyComponents>{children}</ClientOnlyComponents>;
 };
 
 export default ClientWrapper;
