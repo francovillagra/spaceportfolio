@@ -2,26 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    height: 100%;
-  }
+/* Estilos globales del documento */
+html,
+body {
+  @apply bg-[#030014] text-white antialiased m-0 p-0;
 
-  html,  body {
-    height: 100%;
-    min-height: 100%;
-    @apply bg-[#030014] text-white antialiased m-0 p-0;
-    overflow-x: hidden;
-    overflow-y: auto; /* <- Esto habilita el scroll vertical */
-  }
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; /* Habilita el scroll vertical */
 }
 
 /* Fuentes personalizadas */
-
 .font-barlow {
   font-family: "Barlow Condensed", sans-serif;
 }
-
 
 /* Clases personalizadas - Versión optimizada para SSR */
 .Welcome-text {
@@ -34,7 +29,7 @@
     ),
     linear-gradient(90.01deg, #e59cff 0.01%, #9cb2ff 100%);
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   word-spacing: 4px;
 }
@@ -50,7 +45,6 @@
   transition: box-shadow 0.45s cubic-bezier(0.6, 0.6, 0, 1);
 }
 
-
 /* Clases globales para el fondo de estrellas y el blackhole */
 .video-container {
   position: fixed;
@@ -61,8 +55,8 @@
   object-fit: cover;
   z-index: -1; /* Detrás del contenido principal */
   pointer-events: none;
-  /* mix-blend-mode: screen; /* Hace que el blackhole mezcle con el fondo */
-  /*opacity: 0.7; */
+  /* mix-blend-mode: screen; */
+  /* opacity: 0.7; */
 }
 
 .stars-background {
@@ -74,10 +68,18 @@
   z-index: -1;
 }
 
-/* Agrego una máscara para el blackhole */
+/* Máscara para el agujero negro */
 .mask-blackhole {
-  mask-image: radial-gradient(circle at center, rgba(255, 255, 255, 1) 20%, rgba(0, 0, 0, 0) 50%);
-  -webkit-mask-image: radial-gradient(circle at center, rgba(255, 255, 255, 1) 20%, rgba(0, 0, 0, 0) 50%);
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(0, 0, 0, 0) 50%
+  );
   mask-size: cover;
   mask-repeat: no-repeat;
   mask-position: center;
