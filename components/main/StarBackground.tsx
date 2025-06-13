@@ -10,8 +10,8 @@ const StarBackground = (props: any) => {
   const ref = useRef<Group>(null);
 
   const [sphere] = useState(() =>
-  inSphere(new Float32Array(6000), { radius: 1.2 })
-);
+    inSphere(new Float32Array(6000), { radius: 1.2 })
+  );
 
   useFrame((state, delta) => {
     if (ref.current) {
@@ -42,8 +42,11 @@ const StarBackground = (props: any) => {
 };
 
 const StarsCanvas = () => (
-  <div className="w-full fixed inset-0 z-0 pointer-events-none">
-    <Canvas camera={{ position: [0, 0, 1] }}>
+  <div className="w-full fixed inset-0 z-[-5] pointer-events-none">
+    <Canvas
+      className="stars-background"
+      camera={{ position: [0, 0, 1] }}
+    >
       <Suspense fallback={null}>
         <StarBackground />
       </Suspense>
