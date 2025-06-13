@@ -7,14 +7,16 @@ module.exports = {
     "./**/*.{js,ts,jsx,tsx}",
   ],
   safelist: [
-    'mask-blackhole',
-    'mix-blend-screen',
-    'mix-blend-overlay',
-    'z-[-1]',
-    'z-[-2]',
-    'z-[-5]',
-    'text-white',
-  ],
+  // Clases personalizadas usadas en el fondo del agujero negro
+  'mask-blackhole',
+  'mix-blend-screen',
+  'mix-blend-overlay',
+  'z-[-1]',
+  'z-[-2]',
+  'z-[-5]',
+  'text-white',
+],
+
   theme: {
     extend: {
       fontFamily: {
