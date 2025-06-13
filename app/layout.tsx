@@ -1,7 +1,9 @@
 import './globals.css';
 import { Inter, Open_Sans } from 'next/font/google';
 import { ReactNode } from 'react';
-import ClientWrapper from '@/components/client/ClientWrapper'; // ✅ Import del wrapper
+import ClientWrapper from '@/components/client/ClientWrapper';
+import StarBackground from '@/components/main/StarBackground'; // Ajusta ruta si hace falta
+import VideoOverlay from '@/components/main/VideoOverlay'; // Ajusta ruta si hace falta
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,7 +27,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es" className={`${inter.variable} ${openSans.variable}`}>
       <body>
-        <ClientWrapper /> {/* ✅ Este sí puede usar ssr: false */}
+        {/* Fondo de estrellas */}
+        <StarBackground />
+
+        {/* Video overlay agujero negro */}
+        <VideoOverlay />
+
+        {/* Wrapper cliente si tiene lógica interactiva */}
+        <ClientWrapper />
+
+        {/* Contenido principal */}
         {children}
       </body>
     </html>
