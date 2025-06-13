@@ -9,7 +9,7 @@ const VideoOverlay = () => {
         loop
         muted
         playsInline
-        className="video-container mask-blackhole opacity-70 mix-blend-screen"
+        className="w-full h-full object-cover opacity-70 mix-blend-screen"
       />
     </div>
   );
