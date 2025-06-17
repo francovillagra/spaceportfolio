@@ -1,10 +1,7 @@
+// layout.tsx
 import './globals.css'
-import { Inter, Open_Sans } from 'next/font/google'
 import { ReactNode } from 'react'
 import ClientOnlyComponents from '@/components/client/ClientOnlyComponents'
-
-const inter = Inter({ subsets: ['latin'] })
-const openSans = Open_Sans({ subsets: ['latin'], weight: ['400', '700'] })
 
 export const metadata = {
   title: 'Mi Portafolio',
@@ -14,8 +11,15 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
-      <body className={`${inter.className} ${openSans.className}`}>
-        <ClientOnlyComponents /> // Acá se renderiza StarCanvas (el fondo de estrellas)
+      <head>
+        {/* ✅ Import manual de Open Sans desde Google Fonts */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400;700&display=swap"
+        />
+      </head>
+      <body className="font-sans">
+        <ClientOnlyComponents />
         {children}
       </body>
     </html>

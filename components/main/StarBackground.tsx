@@ -12,7 +12,7 @@ const StarBackground = (props: Props) => {
   const ref = useRef<ThreePoints>(null); // ← esto es suficiente y seguro
 
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(6000), { radius: 1.2 })
+    random.inSphere(new Float32Array(24000), { radius: 10 }) // era 1.2
   );
 
   useFrame((_, delta) => {
@@ -34,9 +34,10 @@ const StarBackground = (props: Props) => {
         <PointMaterial
           transparent
           color="#ffffff"
-          size={0.002}
+          size={0.015} // Ajustar tamaño estrellas
           sizeAttenuation
           depthWrite={false}
+          opacity={0.95} // Ajustar brillo de estrellas
         />
       </Points>
     </group>
@@ -45,7 +46,7 @@ const StarBackground = (props: Props) => {
 
 const StarsCanvas = () => (
   <div className="w-full fixed inset-0 z-0 pointer-events-none">
-    <Canvas camera={{ position: [0, 0, 2.5] }}>
+    <Canvas camera={{ position: [0, 0, 15], fov: 75 }}> // sin fov 75 y 0,0,3
       <Suspense fallback={null}>
         <StarBackground />
       </Suspense>
