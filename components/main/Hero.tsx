@@ -20,13 +20,21 @@ const Hero = () => {
           aria-label="Video de fondo: agujero negro"
           className="w-full h-full object-cover mix-blend-screen"
           style={{
-          maskImage: 'radial-gradient(circle at center, rgba(255,255,255,1) 20%, rgba(0,0,0,0.4) 85%)',
-          WebkitMaskImage: 'radial-gradient(circle at center, rgba(255,255,255,1) 20%, rgba(0,0,0,0.4) 85%)',
-          maskRepeat: 'no-repeat',
-          WebkitMaskRepeat: 'no-repeat',
-          maskSize: 'cover',
-          WebkitMaskSize: 'cover',
-  }}
+            // maskImage: Crea una máscara radial que parte del centro.
+            // El centro (10%) es negro opaco -> se ve con total claridad
+            // Zona intermedia (50%) va aclarando progresivamente
+            // Los bordes (90% en adelante) son completamente transparentes -> dejan ver el fondo de estrellas
+              maskImage: 'radial-gradient(circle at center, rgba(0,0,0,1) 10%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 90%)',
+            // Prefijo para compatibilidad con navegadores basados en WebKit (Chrome, Safari)  
+              WebkitMaskImage: 'radial-gradient(circle at center, rgba(0,0,0,1) 20%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0) 100%)',
+            // Evita que la mascara se repita  
+              maskRepeat: 'no-repeat',
+              WebkitMaskRepeat: 'no-repeat',
+            // Hace que la máscara cubra todo el contenedor  
+              maskSize: 'cover',
+              WebkitMaskSize: 'cover',
+}}
+
 >
   <source src="/blackhole.webm" type="video/webm" />
   <source src="/blackhole.mp4" type="video/mp4" />
