@@ -25,7 +25,6 @@
       ] // Configuración correcta para alias
     },
     "types": [
-      "framer-motion",
       "node" // Añadido para soporte de Node.js
     ],
     "plugins": [
