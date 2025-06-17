@@ -86,3 +86,28 @@
 canvas.stars-background {
   filter: brightness(1.5) contrast(1.2);
 }
+
+.distortion-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  backdrop-filter: blur(3px) contrast(1.5);
+  animation: ripple 6s infinite ease-in-out;
+  opacity: 0.15;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes ripple {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
