@@ -2,11 +2,11 @@
 
 import React, { useState, useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial, Preload } from '@react-three/drei';
+import { Points, PointMaterial, Preload, PointsProps } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
 import { Group } from 'three';
 
-const StarBackground = (props: any) => {
+const StarBackground = (props: PointsProps) => {
   const ref = useRef<Group>(null);
 
   const [sphere] = useState(() =>
@@ -42,7 +42,7 @@ const StarBackground = (props: any) => {
 };
 
 const StarsCanvas = () => (
-  <div className="w-full fixed inset-0 z-0 pointer-events-none">
+  <div className="w-full fixed inset-0 z-[-2] pointer-events-none">
     <Canvas camera={{ position: [0, 0, 1] }}>
       <Suspense fallback={null}>
         <StarBackground />
