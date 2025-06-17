@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+    "typeRoots": ["./types", "./node_modules/@types"],
     "target": "ES2020", // Actualizado para mejor soporte de Next.js 15
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+
     "module": "esnext",
     "moduleResolution": "node", // ¡Correcto para Next.js!
     "skipLibCheck": true,
