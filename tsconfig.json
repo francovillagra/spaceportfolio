@@ -30,7 +30,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "globals.d.ts"
-    "maath.d.ts"
   ],
   "exclude": ["node_modules"]
 }
