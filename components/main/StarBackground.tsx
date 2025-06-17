@@ -4,12 +4,12 @@ import React, { useState, useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial, Preload } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
-import type { JSX } from 'react';
+import type { Points as ThreePoints } from 'three';
 
 type Props = JSX.IntrinsicElements['points'];
 
 const StarBackground = (props: Props) => {
-  const ref = useRef<import('three').Points>(null); // ✅ Tipo correcto
+  const ref = useRef<ThreePoints>(null); // ← esto es suficiente y seguro
 
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(6000), { radius: 1.2 })
