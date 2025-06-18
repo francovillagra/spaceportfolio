@@ -12,7 +12,7 @@ const StarBackground = (props: Props) => {
   const ref = useRef<ThreePoints>(null); // ← esto es suficiente y seguro
 
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(24000), { radius: 10 }) // era 1.2
+    random.inSphere(new Float32Array(18000), { radius: 10 }) 
   );
 
   useFrame((_, delta) => {
