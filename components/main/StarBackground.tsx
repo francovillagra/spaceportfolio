@@ -46,7 +46,7 @@ const StarBackground = (props: Props) => {
 
 const StarsCanvas = () => (
   <div className="w-full fixed inset-0 z-0 pointer-events-none">
-    <Canvas camera={{ position: [0, 0, 15], fov: 75 }}> // sin fov 75 y 0,0,3
+    <Canvas camera={{ position: [0, 0, 3], fov: 75 }}> // sin fov 75 y 0,0,3
       <Suspense fallback={null}>
         <StarBackground />
       </Suspense>
