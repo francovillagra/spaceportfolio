@@ -14,7 +14,7 @@ const SkillText = () => {
       >
         <SparklesIcon className="text-[#b49bff] mr-1 h-3 w-3" />
         <span className="text-[10px] text-white font-medium uppercase tracking-tight font-sans">
-          Think better with Next.js 13
+          Lleva tu desarrollo al siguiente nivel con Next.js 13
         </span>
       </motion.div>
 
