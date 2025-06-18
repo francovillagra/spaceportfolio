@@ -2,6 +2,7 @@
 import './globals.css'
 import { ReactNode } from 'react'
 import ClientOnlyComponents from '@/components/client/ClientOnlyComponents'
+import Footer from '@/components/main/Footer'
 
 export const metadata = {
   title: 'Mi Portafolio',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="font-sans">
         <ClientOnlyComponents />
         {children}
+        <Footer />
       </body>
     </html>
   )
