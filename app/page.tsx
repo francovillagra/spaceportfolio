@@ -2,7 +2,7 @@ import Encryption from "@/components/main/Encryption";
 import Hero from "@/components/main/Hero";
 import Skills from "@/components/main/Skills";
 import Projects from "@/components/main/Projects";
-import StarBackground from "@/components/main/StarBackground"; // Importá tu fondo estelar
+import StarBackground from "@/components/main/StarBackground";
 
 export default function Home() {
   return (
