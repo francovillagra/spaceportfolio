@@ -41,7 +41,7 @@ const Encryption = () => {
           />
 
           {/* Etiqueta Encryption (más pequeña y sutil) */}
-          <div className="Welcome-box mt-1 px-[5px] py-[1px] border border-[#7042f88b] opacity-[0.65] -mt-2 translate-x-[-19px]">
+          <div className="Welcome-box translate-y-[-6px] px-[5px] py-[1px] border border-[#7042f88b] opacity-[0.65] translate-x-[-19px]">
             <h1 className="text-[10px] text-gray-500 font-light tracking-wide">Encryption</h1>
 
           </div>
