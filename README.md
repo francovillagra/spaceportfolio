@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SpacePortfolio
 
-## Getting Started
+Portfolio web personal desarrollado con tecnologías modernas enfocadas en rendimiento, experiencia de usuario y visuales impactantes.
 
-First, run the development server:
+---
+
+## Tecnologías utilizadas
+
+Este proyecto está construido con un stack tecnológico robusto y actualizado para crear una experiencia web fluida, moderna y escalable:
+
+- **Next.js (v15.3.1)**: Framework React para aplicaciones web con renderizado híbrido (SSR, SSG), routing automático y optimizaciones como Turbopack.
+- **React (v19.1.0)**: Biblioteca para construir interfaces reactivas y componentes reutilizables.
+- **TypeScript (v5)**: Tipado estático que mejora la calidad y mantenibilidad del código.
+- **Tailwind CSS (v3.4.1)**: Framework CSS utilitario para estilos rápidos, responsivos y personalizables.
+  - Configurado para analizar selectivamente el contenido en las carpetas `app`, `components` y `utils`.
+  - Extensión del tema con fuente personalizada `cedarville` para aportar identidad visual.
+- **Framer Motion**: Animaciones declarativas y transiciones suaves en React.
+- **React Three Fiber y Drei**: Integración de gráficos 3D en React con Three.js para fondos animados de estrellas.
+- **Three.js**: Biblioteca JavaScript para renderizado 3D con WebGL.
+- **React Icons, Heroicons e Ionicons**: Iconos SVG modernos para mejorar la interfaz.
+- **Emotion**: CSS-in-JS para estilos dinámicos en componentes.
+- **Immer**: Manejo sencillo de estados inmutables en React.
+- **React Intersection Observer**: Detección eficiente de visibilidad para optimizar carga y animaciones.
+
+---
+
+## Herramientas de desarrollo y calidad
+
+- **ESLint** con configuraciones para TypeScript y Next.js, asegurando código limpio y consistente.
+- **Babel y Babel Macros** para transformaciones avanzadas de JavaScript.
+- **PostCSS y Autoprefixer** para procesamiento y optimización del CSS.
+- **Yarn (v4.9.1)** como gestor de paquetes.
+
+---
+
+## Scripts disponibles
+
+Para iniciar el servidor de desarrollo:
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para construir el proyecto para producción:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+yarn build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para iniciar la aplicación en modo producción:
 
-## Learn More
+yarn start
 
-To learn more about Next.js, take a look at the following resources:
+Para ejecutar el linter y verificar la calidad del código:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+yarn lint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desarrollador por Franco Villagra - Desarrollador Fullstack
+Creando Soluciones con tecnología
