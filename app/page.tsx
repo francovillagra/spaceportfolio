@@ -3,16 +3,10 @@ import Encryption from "@/components/main/Encryption";
 import Hero from "@/components/main/Hero";
 import Skills from "@/components/main/Skills";
 import Projects from "@/components/main/Projects";
-import dynamic from 'next/dynamic';
-
-// Lazy load del fondo si es pesado
-const StarBackground = dynamic(() => import('@/components/main/StarBackground'), { ssr: false });
 
 export default function Home() {
   return (
     <>
-      <StarBackground />
-
       <main className="relative min-h-screen w-full z-10">
         {/* Heading accesible para SEO */}
         <h1 className="sr-only">Portafolio de Franco Villagra</h1>
@@ -33,6 +27,7 @@ export default function Home() {
     </>
   );
 }
+
 // Este archivo define la estructura principal de la página de inicio de la aplicación Next.js
 // Importa los componentes principales y los renderiza en el orden adecuado
 // Utiliza Lazy Loading para el fondo de estrellas para mejorar el rendimiento
