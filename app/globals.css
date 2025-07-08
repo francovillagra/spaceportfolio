@@ -7,7 +7,8 @@
     height: 100%;
   }
 
-  html,  body {
+  html,
+  body {
     height: 100%;
     min-height: 100%;
     @apply bg-[#030014] text-white antialiased m-0 p-0;
@@ -22,7 +23,6 @@
   font-family: "Barlow Condensed", sans-serif;
 }
 
-
 /* Clases personalizadas - Versión optimizada para SSR */
 .Welcome-text {
   @apply text-[20px] whitespace-nowrap;
@@ -34,7 +34,7 @@
     ),
     linear-gradient(90.01deg, #e59cff 0.01%, #9cb2ff 100%);
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   word-spacing: 4px;
 }
@@ -49,7 +49,6 @@
   isolation: isolate;
   transition: box-shadow 0.45s cubic-bezier(0.6, 0.6, 0, 1);
 }
-
 
 /* Clases globales para el fondo de estrellas y el blackhole */
 .video-container {
@@ -76,8 +75,16 @@
 
 /* Agrego una máscara para el blackhole */
 .mask-blackhole {
-  mask-image: radial-gradient(circle at center, rgba(255, 255, 255, 1) 20%, rgba(0, 0, 0, 0) 50%);
-  -webkit-mask-image: radial-gradient(circle at center, rgba(255, 255, 255, 1) 20%, rgba(0, 0, 0, 0) 50%);
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(0, 0, 0, 0) 50%
+  );
   mask-size: cover;
   mask-repeat: no-repeat;
   mask-position: center;
@@ -98,16 +105,46 @@ canvas.stars-background {
   backdrop-filter: blur(3px) contrast(1.5);
   animation: ripple 6s infinite ease-in-out;
   opacity: 0.15;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 70%
+  );
   pointer-events: none;
   z-index: 1;
 }
 
 @keyframes ripple {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(1);
   }
   50% {
     transform: translate(-50%, -50%) scale(1.05);
   }
+}
+
+/* -----------------------------------------
+   Overrides específicos para Hero
+----------------------------------------- */
+
+.mask-blackhole {
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  mix-blend-mode: screen;
+  opacity: 1;
 }
