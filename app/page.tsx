@@ -1,3 +1,4 @@
+// page.tsx - Página principal de la aplicación Next.js
 import Encryption from "@/components/main/Encryption";
 import Hero from "@/components/main/Hero";
 import Skills from "@/components/main/Skills";

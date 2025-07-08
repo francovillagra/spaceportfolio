@@ -1,25 +1,26 @@
-// layout.tsx
+// layout.tsx - Estructura raíz de la aplicación Next.js
 import './globals.css'
 import { ReactNode } from 'react'
 import ClientOnlyComponents from '@/components/client/ClientOnlyComponents'
 import Footer from '@/components/main/Footer'
+import { Inter, Open_Sans } from 'next/font/google'
+import type { Metadata } from 'next'
 
-export const metadata = {
+const inter = Inter({ subsets: ['latin'] })
+const openSans = Open_Sans({ subsets: ['latin'], weight: ['400', '700'] })
+
+export const metadata: Metadata = {
   title: 'Mi Portafolio',
   description: 'Portafolio personal con tecnologías modernas',
+  keywords: ['portafolio', 'desarrollador', 'React', 'Next.js'],
+  authors: [{ name: 'Franco Villagra' }],
+  viewport: 'width=device-width, initial-scale=1.0'
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
-      <head>
-        {/* ✅ Import manual de Open Sans desde Google Fonts */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400;700&display=swap"
-        />
-      </head>
-      <body className="font-sans">
+      <body className={`${inter.className} ${openSans.className}`}>
         <ClientOnlyComponents />
         {children}
         <Footer />
