@@ -148,3 +148,17 @@ canvas.stars-background {
   mix-blend-mode: screen;
   opacity: 1;
 }
+
+/* -----------------------------------------
+    Overrides específicos para HeroContent
+    ---------------------------------------- */
+.transform-image-shift {
+  transform: translateY(-10px) translateX(60px);
+}
+
+/* -----------------------------------------
+    Clases de escala para animaciones y efectos en Skills.tsx
+    ------------------------------------------ */
+.scale-90 {
+  transform: scale(0.9);
+}
