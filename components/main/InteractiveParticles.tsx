@@ -11,7 +11,7 @@ const InteractiveParticles = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full z-[-10] pointer-events-none">
+    <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -19,7 +19,7 @@ const InteractiveParticles = () => {
           fullScreen: false,
           background: {
             color: {
-              value: '#030014',
+              value: '#000000', // Cambiar después a #030014 o color deseado
             },
           },
           fpsLimit: 60,
@@ -87,4 +87,3 @@ const InteractiveParticles = () => {
 };
 
 export default InteractiveParticles;
-
