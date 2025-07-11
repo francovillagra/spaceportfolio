@@ -162,3 +162,12 @@ canvas.stars-background {
 .scale-90 {
   transform: scale(0.9);
 }
+
+html,
+body,
+#__next {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Opcional, para evitar scroll si no querés */
+}
