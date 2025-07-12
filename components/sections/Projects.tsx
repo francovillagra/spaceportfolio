@@ -1,32 +1,20 @@
-import React from 'react';
-import ProjectCard from '../sub/ProjectCard';
+'use client';
 
-const Projects = () => {
+import SectionContainer from '../Layout/SectionContainer';
+
+export default function Projects() {
   return (
-    <div className="relative z-10 flex flex-col items-center py-20 bg-transparent">
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-10">
-        Mis Proyectos
-      </h1>
-
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
-        <ProjectCard
-          src="/NextWebsite.png"
-          title="Modern Next.js Portfolio"
-          description="Portfolio creado con tecnologías modernas como Next.js, Tailwind y más."
-        />
-        <ProjectCard
-          src="/CardImage.png"
-          title="Interactive Website Cards"
-          description="Diseños de tarjetas animadas e interactivas para mostrar contenido."
-        />
-        <ProjectCard
-          src="/SpaceWebsite.png"
-          title="Space Themed Website"
-          description="Diseño con temática espacial y fondo dinámico de estrellas."
-        />
-      </div>
-    </div>
+    <SectionContainer id="projects">
+      <h2 className="text-4xl font-bold mb-4">Proyectos</h2>
+      <p className="text-lg text-gray-300">
+        Muestra de mis trabajos y proyectos destacados.
+      </p>
+    </SectionContainer>
   );
-};
-
-export default Projects;
+}
+/**
+ * Projects.tsx
+ * * Este componente representa la sección "Proyectos" del portfolio.
+ * * Su objetivo es presentar al visitante una selección de los proyectos más relevantes del desarrollador,
+ * * incluyendo descripciones, tecnologías utilizadas y enlaces a los repositorios o demos.
+ */
