@@ -3,43 +3,33 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen text-center bg-[#030014] px-4">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4">¡Bienvenido a mi Portfolio!</h1>
-      <p className="text-lg md:text-xl text-gray-400 mb-8">
-        Soy Franco Villagra, desarrollador fullstack.
+    <main className="min-h-screen flex flex-col items-center justify-center bg-[#030014] text-white p-8">
+      <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center">
+        Bienvenido a mi Portfolio
+      </h1>
+      <p className="text-lg mb-12 text-center max-w-xl">
+        Elige una sección para explorar más detalles sobre mi trabajo.
       </p>
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full">
         <Link
-          href="/about"
-          className="bg-gradient-to-r from-purple-500 to-cyan-500 py-2 px-6 rounded-lg text-white hover:opacity-90 transition"
+          href="/section/hero"
+          className="bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg p-6 text-center hover:opacity-90 transition"
         >
-          Sobre mí
+          Ver Hero
         </Link>
         <Link
-          href="/skills"
-          className="bg-gradient-to-r from-purple-500 to-cyan-500 py-2 px-6 rounded-lg text-white hover:opacity-90 transition"
+          href="/section/skills"
+          className="bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg p-6 text-center hover:opacity-90 transition"
         >
-          Habilidades
+          Ver Skills
         </Link>
         <Link
-          href="/projects"
-          className="bg-gradient-to-r from-purple-500 to-cyan-500 py-2 px-6 rounded-lg text-white hover:opacity-90 transition"
+          href="/section/projects"
+          className="bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg p-6 text-center hover:opacity-90 transition"
         >
-          Proyectos
-        </Link>
-        <Link
-          href="/contact"
-          className="bg-gradient-to-r from-purple-500 to-cyan-500 py-2 px-6 rounded-lg text-white hover:opacity-90 transition"
-        >
-          Contacto
+          Ver Projects
         </Link>
       </div>
     </main>
   );
 }
-/**
- * Home.tsx
- * * Este es el componente principal de la página de inicio del portfolio.
- * * * Su objetivo es dar la bienvenida al visitante y ofrecer enlaces a las secciones principales del portfolio,
- * * * como "Sobre mí", "Habilidades", "Proyectos" y "Contacto".
- */

@@ -3,8 +3,8 @@
 import { ReactNode } from 'react';
 import dynamic from 'next/dynamic';
 
-const Navbar = dynamic(() => import('@/components/main/Navbar'), { ssr: false });
-const Particles = dynamic(() => import('@/components/main/InteractiveParticles'), { ssr: false });
+const Navbar = dynamic(() => import('@/components/shared/Navbar'), { ssr: false });
+const Particles = dynamic(() => import('@/components/shared/InteractiveParticles'), { ssr: false });
 
 type Props = {
   children?: ReactNode;
