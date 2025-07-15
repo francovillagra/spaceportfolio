@@ -50,4 +50,4 @@ export default HomeNavigation;
  * Objetivo del componente:
  * * Mostrar los botones principales del portfolio (Ej: "Sobre mí", "Habilidades", "Proyectos", "Contacto", etc.).
     Cada botón, al hacer clic, dispara una transición de vista mostrando esa sección.
-    No hay scroll: se reemplaza el contenido de la pantalla con animaciones (lo haremos luego).
+    No hay scroll: se reemplaza el contenido de la pantalla con animaciones. */
