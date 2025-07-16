@@ -1,6 +1,6 @@
 'use client';
 
-import SectionContainer from '../Layout/SectionContainer';
+import SectionContainer from '@/components/layout/SectionContainer';
 
 export default function Contact() {
   return (
