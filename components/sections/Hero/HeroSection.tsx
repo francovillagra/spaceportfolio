@@ -5,54 +5,50 @@ import { slideInFromTop, slideInFromLeft, slideInFromRight } from '@/utils/motio
 import { SparklesIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 
+import SectionWrapper from '@/components/layout/SectionWrapper';
+import Heading from '@/components/ui/Heading';
+import Paragraph from '@/components/ui/Paragraph';
+import Button from '@/components/ui/Button';
+
 const HeroSection = () => {
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      className="flex flex-row items-center justify-center px-20 pt-20 w-full z-[20] min-h-screen"
-    >
-      {/* Contenedor de la izquierda (texto) */}
+    <SectionWrapper className="flex flex-row items-center justify-center px-4 md:px-20 pt-20 w-full z-[20] min-h-screen">
+      {/* Texto a la izquierda */}
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
           variants={slideInFromTop(0.5)}
           className="Welcome-box py-2 px-1 border border-[#7042f88b] opacity-90 flex items-center"
         >
           <SparklesIcon className="text-[#b49bff] mr-1 h-3 w-3" />
-          <h1 className="text-[10px] text-white font-medium uppercase tracking-tight font-sans">
+          <p className="text-[10px] text-white font-medium uppercase tracking-tight font-sans">
             Portfolio Desarrollador Fullstack
-          </h1>
+          </p>
         </motion.div>
 
-        <motion.div
-          variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-3 mt-6 text-white max-w-[600px] w-auto h-auto leading-tight"
-        >
-          <span className="font-sans text-5xl font-bold">
+        <motion.div variants={slideInFromLeft(0.5)} className="flex flex-col gap-3 mt-6">
+          <Heading level={1}>
             Ofreciendo{' '}
-            <span className="font-sans text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               la mejor
-            </span>
-          </span>
-          <span className="font-sans text-5xl font-bold">experiencia de proyecto</span>
+            </span>{' '}
+            experiencia de proyecto
+          </Heading>
         </motion.div>
 
-        <motion.p
-          variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
-        >
-          Bienvenido a mi laboratorio digital, donde experimento con ideas, construyo soluciones y aprendo algo nuevo cada día. Disfruto resolver problemas con tecnología y transformar ideas en soluciones funcionales. Te invito a conocer mis proyectos.
-        </motion.p>
+        <motion.div variants={slideInFromLeft(0.8)}>
+          <Paragraph className="text-lg text-gray-400 max-w-[600px]">
+            Bienvenido a mi laboratorio digital, donde experimento con ideas, construyo soluciones y aprendo algo nuevo cada día. Disfruto resolver problemas con tecnología y transformar ideas en soluciones funcionales. Te invito a conocer mis proyectos.
+          </Paragraph>
+        </motion.div>
 
-        <motion.a
-          variants={slideInFromLeft(1)}
-          className="bg-gradient-to-r from-purple-500 to-cyan-500 py-2 px-4 rounded-lg text-white text-center cursor-pointer hover:opacity-90 transition max-w-[200px]"
-        >
-          Saber más!
-        </motion.a>
+        <motion.div variants={slideInFromLeft(1)}>
+          <Button variant="primary" className="mt-4 max-w-[200px]">
+            Saber más!
+          </Button>
+        </motion.div>
       </div>
 
-      {/* Contenedor de la derecha (imagen) */}
+      {/* Imagen a la derecha */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="relative w-full md:w-1/2 h-auto flex justify-center items-center"
@@ -67,11 +63,8 @@ const HeroSection = () => {
           />
         </div>
       </motion.div>
-    </motion.div>
+    </SectionWrapper>
   );
 };
 
 export default HeroSection;
-
-// Este componente HeroSection muestra la sección principal del portfolio
-// Utiliza framer-motion para animaciones suaves de entrada
