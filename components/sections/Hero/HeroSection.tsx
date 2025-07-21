@@ -4,51 +4,53 @@ import { motion } from 'framer-motion';
 import { slideInFromTop, slideInFromLeft, slideInFromRight } from '@/utils/motion';
 import { SparklesIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
-
-import SectionWrapper from '@/components/layout/SectionWrapper';
-import Heading from '@/components/ui/Heading';
-import Paragraph from '@/components/ui/Paragraph';
-import Button from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button';
+import { Card } from '@/components/ui/Card';
+import { Title } from '@/components/ui/Title';
+import { Paragraph } from '@/components/ui/Paragraph';
 
 const HeroSection = () => {
   return (
-    <SectionWrapper className="flex flex-row items-center justify-center px-4 md:px-20 pt-20 w-full z-[20] min-h-screen">
-      {/* Texto a la izquierda */}
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      className="flex flex-row items-center justify-center px-20 pt-20 w-full z-[20] min-h-screen"
+    >
+      {/* Texto izquierda */}
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
-        <motion.div
-          variants={slideInFromTop(0.5)}
-          className="Welcome-box py-2 px-1 border border-[#7042f88b] opacity-90 flex items-center"
-        >
-          <SparklesIcon className="text-[#b49bff] mr-1 h-3 w-3" />
-          <p className="text-[10px] text-white font-medium uppercase tracking-tight font-sans">
-            Portfolio Desarrollador Fullstack
-          </p>
+        <motion.div variants={slideInFromTop(0.5)}>
+          <Card className="py-2 px-1 border border-[#7042f88b] opacity-90 flex items-center Welcome-box">
+            <SparklesIcon className="text-[#b49bff] mr-1 h-3 w-3" />
+            <Paragraph size="xs" className="text-white font-medium uppercase tracking-tight font-sans">
+              Portfolio Desarrollador Fullstack
+            </Paragraph>
+          </Card>
         </motion.div>
 
-        <motion.div variants={slideInFromLeft(0.5)} className="flex flex-col gap-3 mt-6">
-          <Heading level={1}>
+        <motion.div variants={slideInFromLeft(0.5)} className="flex flex-col gap-3 mt-6 text-white max-w-[600px] w-auto h-auto leading-tight">
+          <Title level="h1">
             Ofreciendo{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               la mejor
-            </span>{' '}
-            experiencia de proyecto
-          </Heading>
+            </span>
+          </Title>
+          <Title level="h1">experiencia de proyecto</Title>
         </motion.div>
 
         <motion.div variants={slideInFromLeft(0.8)}>
-          <Paragraph className="text-lg text-gray-400 max-w-[600px]">
+          <Paragraph className="text-gray-400 my-5 max-w-[600px] text-lg">
             Bienvenido a mi laboratorio digital, donde experimento con ideas, construyo soluciones y aprendo algo nuevo cada día. Disfruto resolver problemas con tecnología y transformar ideas en soluciones funcionales. Te invito a conocer mis proyectos.
           </Paragraph>
         </motion.div>
 
         <motion.div variants={slideInFromLeft(1)}>
-          <Button variant="primary" className="mt-4 max-w-[200px]">
+          <Button variant="primary" className="max-w-[200px]">
             Saber más!
           </Button>
         </motion.div>
       </div>
 
-      {/* Imagen a la derecha */}
+      {/* Imagen derecha */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="relative w-full md:w-1/2 h-auto flex justify-center items-center"
@@ -63,7 +65,7 @@ const HeroSection = () => {
           />
         </div>
       </motion.div>
-    </SectionWrapper>
+    </motion.div>
   );
 };
 
