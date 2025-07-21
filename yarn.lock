@@ -3967,12 +3967,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^12.4.10":
-  version: 12.7.4
-  resolution: "framer-motion@npm:12.7.4"
+"framer-motion@npm:^12.23.6":
+  version: 12.23.6
+  resolution: "framer-motion@npm:12.23.6"
   dependencies:
-    motion-dom: "npm:^12.7.4"
-    motion-utils: "npm:^12.7.2"
+    motion-dom: "npm:^12.23.6"
+    motion-utils: "npm:^12.23.6"
     tslib: "npm:^2.4.0"
   peerDependencies:
     "@emotion/is-prop-valid": "*"
@@ -3985,7 +3985,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c0/5168678ba5fb52039e23283ab0f4443b365b49758c410cd2f9f7b4df68a3ce1ce154aa064291dd4d0f29d4d95491b796f04cb5f3a20e356cdc5b08d59c6a5b16
+  checksum: 10c0/4bb30b6a39cb3a0cd70a103fa8c321c751d2d308253fb84c3ed3c97ac7278cbd2b66e8b76207f540f2760d024d516e50f7038c15ba63f42c9184d8dab02d7478
   languageName: node
   linkType: hard
 
@@ -5225,19 +5225,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"motion-dom@npm:^12.7.4":
-  version: 12.7.4
-  resolution: "motion-dom@npm:12.7.4"
+"motion-dom@npm:^12.23.6":
+  version: 12.23.6
+  resolution: "motion-dom@npm:12.23.6"
   dependencies:
-    motion-utils: "npm:^12.7.2"
-  checksum: 10c0/234aae6c7c4413d0b9f791d8f4be7e4ba5313f584e59a231123958aaeac9edf6a9184acf6f6bbdb75f2fb97057854c6e15a74e4a1bfb990817bf028c34344bfe
+    motion-utils: "npm:^12.23.6"
+  checksum: 10c0/4f4c5e9fcabdad6e3523c71f1e23bd0cb50a71e362a02d1897dfd30f85b044c88ccf62d506dfa35388b035d4073714b9ad021c70c858eab7d6c2227908ee18cc
   languageName: node
   linkType: hard
 
-"motion-utils@npm:^12.7.2":
-  version: 12.7.2
-  resolution: "motion-utils@npm:12.7.2"
-  checksum: 10c0/ef974eee10d647f2cdfb80a3a739d60c5e8eb627818cbd80d92bd8b52b222735177fe3aecea7ec153b36fd348e8fdfbb233d4be68ed26b8eaa369fd7a06f4851
+"motion-utils@npm:^12.23.6":
+  version: 12.23.6
+  resolution: "motion-utils@npm:12.23.6"
+  checksum: 10c0/c058e8ba6423b3baa63e985bcc669877ee7d9579d938f5348b4e60c5ea1b4b33dd7f4877434436a4a5807f3cf00370d3fd4079a6fdd6309c5c87aa62b311a897
   languageName: node
   linkType: hard
 
@@ -6383,7 +6383,7 @@ __metadata:
     eslint-config-next: "npm:15.2.1"
     eslint-import-resolver-typescript: "npm:^4.4.3"
     eslint-plugin-import: "npm:^2.31.0"
-    framer-motion: "npm:^12.4.10"
+    framer-motion: "npm:^12.23.6"
     immer: "npm:^10.1.1"
     ionicons: "npm:^7.4.0"
     maath: "npm:^0.10.8"
