@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
-import { FaBars, FaTimes, FaUserAlt, FaEnvelope, FaTools, FaLaptopCode } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { NavigationItem, NavigationMenu } from '@/components/navigation';
 import Button from '@/components/ui/Button';
 
 type SectionKey = 'home' | 'about' | 'skills' | 'projects' | 'contact' | 'hero';
@@ -17,7 +17,7 @@ export default function HomeNavigation({ setActiveSection }: HomeNavigationProps
 
   const handleClick = (section: SectionKey) => {
     setActiveSection(section);
-    setIsOpen(false); // cerrar menú móvil
+    setIsOpen(false);
   };
 
   return (
@@ -26,39 +26,30 @@ export default function HomeNavigation({ setActiveSection }: HomeNavigationProps
         Franco Villagra
       </div>
 
+      {/* Menú Desktop */}
       <nav className="hidden md:flex gap-6 items-center">
-        <Button variant="link" onClick={() => handleClick('about')} className="flex items-center gap-1">
-          <FaUserAlt /> Sobre mí
-        </Button>
-        <Button variant="link" onClick={() => handleClick('skills')} className="flex items-center gap-1">
-          <FaTools /> Habilidades
-        </Button>
-        <Button variant="link" onClick={() => handleClick('projects')} className="flex items-center gap-1">
-          <FaLaptopCode /> Proyectos
-        </Button>
-        <Button variant="link" onClick={() => handleClick('contact')} className="flex items-center gap-1">
-          <FaEnvelope /> Contacto
-        </Button>
+        <NavigationMenu>
+          <NavigationItem icon="user" onClick={() => handleClick('about')} label="Sobre mí" />
+          <NavigationItem icon="tools" onClick={() => handleClick('skills')} label="Habilidades" />
+          <NavigationItem icon="code" onClick={() => handleClick('projects')} label="Proyectos" />
+          <NavigationItem icon="mail" onClick={() => handleClick('contact')} label="Contacto" />
+        </NavigationMenu>
       </nav>
 
+      {/* Botón hamburguesa en móvil */}
       <Button onClick={toggleMenu} variant="icon" className="md:hidden text-2xl">
         {isOpen ? <FaTimes /> : <FaBars />}
       </Button>
 
+      {/* Menú Mobile */}
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-gray-800 flex flex-col items-start px-6 py-4 gap-4 md:hidden z-50">
-          <Button variant="link" onClick={() => handleClick('about')} className="flex items-center gap-2">
-            <FaUserAlt /> Sobre mí
-          </Button>
-          <Button variant="link" onClick={() => handleClick('skills')} className="flex items-center gap-2">
-            <FaTools /> Habilidades
-          </Button>
-          <Button variant="link" onClick={() => handleClick('projects')} className="flex items-center gap-2">
-            <FaLaptopCode /> Proyectos
-          </Button>
-          <Button variant="link" onClick={() => handleClick('contact')} className="flex items-center gap-2">
-            <FaEnvelope /> Contacto
-          </Button>
+          <NavigationMenu direction="column">
+            <NavigationItem icon="user" onClick={() => handleClick('about')} label="Sobre mí" />
+            <NavigationItem icon="tools" onClick={() => handleClick('skills')} label="Habilidades" />
+            <NavigationItem icon="code" onClick={() => handleClick('projects')} label="Proyectos" />
+            <NavigationItem icon="mail" onClick={() => handleClick('contact')} label="Contacto" />
+          </NavigationMenu>
         </div>
       )}
     </header>
