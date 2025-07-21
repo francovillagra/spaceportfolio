@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { FaBars, FaTimes, FaHome, FaUserAlt, FaEnvelope, FaTools, FaLaptopCode } from 'react-icons/fa';
+import { FaBars, FaTimes, FaUserAlt, FaEnvelope, FaTools, FaLaptopCode } from 'react-icons/fa';
+import Button from '@/components/ui/Button';
 
 type SectionKey = 'home' | 'about' | 'skills' | 'projects' | 'contact' | 'hero';
 
@@ -26,38 +27,38 @@ export default function HomeNavigation({ setActiveSection }: HomeNavigationProps
       </div>
 
       <nav className="hidden md:flex gap-6 items-center">
-        <button onClick={() => handleClick('about')} className="hover:text-blue-400 flex items-center gap-1">
+        <Button variant="link" onClick={() => handleClick('about')} className="flex items-center gap-1">
           <FaUserAlt /> Sobre mí
-        </button>
-        <button onClick={() => handleClick('skills')} className="hover:text-blue-400 flex items-center gap-1">
+        </Button>
+        <Button variant="link" onClick={() => handleClick('skills')} className="flex items-center gap-1">
           <FaTools /> Habilidades
-        </button>
-        <button onClick={() => handleClick('projects')} className="hover:text-blue-400 flex items-center gap-1">
+        </Button>
+        <Button variant="link" onClick={() => handleClick('projects')} className="flex items-center gap-1">
           <FaLaptopCode /> Proyectos
-        </button>
-        <button onClick={() => handleClick('contact')} className="hover:text-blue-400 flex items-center gap-1">
+        </Button>
+        <Button variant="link" onClick={() => handleClick('contact')} className="flex items-center gap-1">
           <FaEnvelope /> Contacto
-        </button>
+        </Button>
       </nav>
 
-      <button onClick={toggleMenu} className="md:hidden text-2xl">
+      <Button onClick={toggleMenu} variant="icon" className="md:hidden text-2xl">
         {isOpen ? <FaTimes /> : <FaBars />}
-      </button>
+      </Button>
 
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-gray-800 flex flex-col items-start px-6 py-4 gap-4 md:hidden z-50">
-          <button onClick={() => handleClick('about')} className="flex items-center gap-2">
+          <Button variant="link" onClick={() => handleClick('about')} className="flex items-center gap-2">
             <FaUserAlt /> Sobre mí
-          </button>
-          <button onClick={() => handleClick('skills')} className="flex items-center gap-2">
+          </Button>
+          <Button variant="link" onClick={() => handleClick('skills')} className="flex items-center gap-2">
             <FaTools /> Habilidades
-          </button>
-          <button onClick={() => handleClick('projects')} className="flex items-center gap-2">
+          </Button>
+          <Button variant="link" onClick={() => handleClick('projects')} className="flex items-center gap-2">
             <FaLaptopCode /> Proyectos
-          </button>
-          <button onClick={() => handleClick('contact')} className="flex items-center gap-2">
+          </Button>
+          <Button variant="link" onClick={() => handleClick('contact')} className="flex items-center gap-2">
             <FaEnvelope /> Contacto
-          </button>
+          </Button>
         </div>
       )}
     </header>
