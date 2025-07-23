@@ -2,6 +2,10 @@
 
 import ProjectCard from './ProjectCard';
 
+type ProjectsSectionProps = {
+  isStandalone?: boolean;
+};
+
 const projects = [
   {
     title: 'Portfolio Personal',
@@ -17,13 +21,19 @@ const projects = [
     techStack: ['Node.js', 'Express', 'MongoDB', 'React'],
     projectLink: 'https://github.com/tuusuario/app-tareas',
   },
-  // Agrega más proyectos aquí
+  // Puedes agregar más proyectos aquí
 ];
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ isStandalone = false }: ProjectsSectionProps) {
   return (
-    <section className="min-h-screen w-full flex flex-col items-center justify-center bg-[#030014] px-6 py-12 gap-12">
-      <h2 className="text-4xl font-bold text-white mb-8">Proyectos</h2>
+    <section
+      className={`w-full flex flex-col items-center justify-center px-6 py-12 gap-12 ${
+        isStandalone ? 'min-h-screen bg-[#030014]' : ''
+      }`}
+    >
+      {isStandalone && (
+        <h2 className="text-4xl font-bold text-white mb-8">Proyectos</h2>
+      )}
       <div className="max-w-5xl w-full flex flex-col gap-10">
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
@@ -32,3 +42,5 @@ export default function ProjectsSection() {
     </section>
   );
 }
+
+export { ProjectsSection };
