@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { slideInFromTop, slideInFromLeft } from '@/utils/motion';
 import Title from '@/components/ui/Title';
 import Paragraph from '@/components/ui/Paragraph';
-import Container from '@/components/ui/Container'; // si lo estás usando
+import Container from '@/components/ui/Container';
 
 export default function AboutSection() {
   return (
