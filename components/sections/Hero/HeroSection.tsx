@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { slideInFromTop, slideInFromLeft, slideInFromRight } from '@/utils/motion';
 import { SparklesIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
-import Button from '@/components/ui/button';
+import Button from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import Title from '@/components/ui/Title';
 import Paragraph from '@/components/ui/Paragraph';
