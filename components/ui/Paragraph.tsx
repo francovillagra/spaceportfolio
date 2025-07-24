@@ -2,13 +2,22 @@
 import React, { HTMLAttributes } from 'react';
 import { cn } from '@/lib/utils';
 
-interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
+interface ParagraphProps {
   className?: string;
+  children: React.ReactNode;
+  size?: 'xs' | 'sm' | 'md' | 'lg'; // añadimos soporte para 'xs'
 }
 
-const Paragraph: React.FC<ParagraphProps> = ({ className, children, ...props }) => {
+const Paragraph = ({ className = '', children, size = 'md' }: ParagraphProps) => {
+  const sizeClasses = {
+    xs: 'text-xs',
+    sm: 'text-sm',
+    md: 'text-base',
+    lg: 'text-lg',
+  };
+
   return (
-    <p className={cn('text-gray-300 text-lg leading-relaxed', className)} {...props}>
+    <p className={`${sizeClasses[size]} ${className}`}>
       {children}
     </p>
   );
