@@ -1,18 +1,14 @@
-// components/ui/Title.tsx
-import React, { HTMLAttributes } from 'react';
-import { cn } from '@/lib/utils';
+import React from 'react';
 
-interface TitleProps extends HTMLAttributes<HTMLHeadingElement> {
-  text: string;
+type TitleProps = {
+  level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  children: React.ReactNode;
   className?: string;
-}
+};
 
-const Title: React.FC<TitleProps> = ({ text, className, ...props }) => {
-  return (
-    <h2 className={cn('text-4xl font-bold text-white', className)} {...props}>
-      {text}
-    </h2>
-  );
+const Title = ({ level = 'h1', children, className = '' }: TitleProps) => {
+  const Tag = level;
+  return <Tag className={`font-bold ${className}`}>{children}</Tag>;
 };
 
 export default Title;
