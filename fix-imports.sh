@@ -1,12 +1,19 @@
 #!/bin/bash
 
-echo "🛠️ Corrigiendo imports con casing incorrecto..."
+echo "🛠️ Buscando imports con casing incorrecto..."
 
 ROOT_DIR="$(pwd)"
 SRC_DIRS=("components" "app" "lib" "utils" "constants" "types")
 EXTENSIONS=(".tsx" ".ts" ".js" ".jsx")
 
-# Buscar coincidencia con casing correcto
+DRY_RUN=false
+if [[ "$1" == "--dry-run" ]]; then
+  DRY_RUN=true
+  echo "🔍 Modo simulación activado (dry-run): no se modificarán archivos"
+  echo ""
+fi
+
+# Función para encontrar coincidencia exacta con el casing correcto
 find_correct_case_path() {
   local dir_path="$1"
   local name_to_match="$2"
@@ -15,7 +22,6 @@ find_correct_case_path() {
     return
   fi
 
-  # Buscar archivos o carpetas con coincidencia case-insensitive
   local match
   match=$(ls "$dir_path" 2>/dev/null | grep -i "^${name_to_match}$")
 
@@ -34,7 +40,6 @@ fix_imports_in_file() {
     [[ "$line" =~ from\ [\'\"]([^\'\"]+)[\'\"] ]] || continue
     import_path="${BASH_REMATCH[1]}"
 
-    # Ignorar imports de paquetes externos
     if [[ "$import_path" != @/* && "$import_path" != .* && "$import_path" != /* ]]; then
       continue
     fi
@@ -47,11 +52,9 @@ fix_imports_in_file() {
       abs_path="$dir/$import_path"
     fi
 
-    # Intentar encontrar coincidencia real en disco
     base_dir=$(dirname "$abs_path")
     base_name=$(basename "$abs_path")
 
-    # Buscar casing correcto en archivos con extensiones comunes
     correct_name=""
     for ext in "${EXTENSIONS[@]}" ""; do
       correct_name=$(find_correct_case_path "$base_dir" "$base_name")
@@ -60,31 +63,32 @@ fix_imports_in_file() {
       fi
     done
 
-    # Si encontró una coincidencia exacta con casing correcto
     if [[ -n "$correct_name" && "$correct_name" != "$base_name" ]]; then
       new_import_path=$(echo "$import_path" | sed "s|$base_name\$|$correct_name|")
 
-      echo "✅ Corrigiendo en: $file"
+      echo "🔧 Sugerencia en: $file"
       echo "   Viejo: $import_path"
       echo "   Nuevo: $new_import_path"
 
-      # Usar sed para reemplazar en el archivo original
-      sed -i "s|$import_path|$new_import_path|g" "$file"
-      changed=true
+      if [[ "$DRY_RUN" == false ]]; then
+        sed -i "s|$import_path|$new_import_path|g" "$file"
+        changed=true
+      fi
+      echo ""
     fi
   done < "$file"
 
-  if [[ "$changed" == true ]]; then
-    echo "💾 Se corrigieron importaciones en: $file"
+  if [[ "$changed" == true && "$DRY_RUN" == false ]]; then
+    echo "💾 Correcciones aplicadas en: $file"
     echo ""
   fi
 }
 
-# Recorrer todos los archivos fuente
 for dir in "${SRC_DIRS[@]}"; do
   find "$ROOT_DIR/$dir" -type f \( -name "*.ts" -o -name "*.tsx" \) | while read file; do
     fix_imports_in_file "$file"
   done
 done
 
-echo "🎉 Corrección automática finalizada."
+echo "✅ Revisión finalizada. $([[ "$DRY_RUN" == true ]] && echo 'No se hicieron cambios.')"
+
