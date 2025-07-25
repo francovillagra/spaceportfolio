@@ -1,14 +1,14 @@
-// components/ui/Paragraph.tsx
 import React, { HTMLAttributes } from 'react';
 import { cn } from '@/lib/utils';
 
 interface ParagraphProps {
   className?: string;
-  children: React.ReactNode;
-  size?: 'xs' | 'sm' | 'md' | 'lg'; // añadimos soporte para 'xs'
+  children?: React.ReactNode;
+  text?: string;
+  size?: 'xs' | 'sm' | 'md' | 'lg';
 }
 
-const Paragraph = ({ className = '', children, size = 'md' }: ParagraphProps) => {
+const Paragraph = ({ className = '', children, text, size = 'md' }: ParagraphProps) => {
   const sizeClasses = {
     xs: 'text-xs',
     sm: 'text-sm',
@@ -17,8 +17,8 @@ const Paragraph = ({ className = '', children, size = 'md' }: ParagraphProps) =>
   };
 
   return (
-    <p className={`${sizeClasses[size]} ${className}`}>
-      {children}
+    <p className={cn(sizeClasses[size], className)}>
+      {text || children}
     </p>
   );
 };
