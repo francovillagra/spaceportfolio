@@ -40,14 +40,17 @@ fix_imports_in_file() {
     [[ "$line" =~ from\ [\'\"]([^\'\"]+)[\'\"] ]] || continue
     import_path="${BASH_REMATCH[1]}"
 
-    if [[ "$import_path" != @/* && "$import_path" != .* && "$import_path" != /* ]]; then
+    # Ignorar paquetes externos (react, next, etc.)
+    if [[ "$import_path" != @/* && "$import_path" != .* && "$import_path" != ../* ]]; then
       continue
     fi
 
+    # Resolver path absoluto
     if [[ "$import_path" == @/* ]]; then
       rel_path="${import_path#@/}"
       abs_path="$ROOT_DIR/$rel_path"
     else
+      # Relative import
       dir=$(dirname "$file")
       abs_path="$dir/$import_path"
     fi
