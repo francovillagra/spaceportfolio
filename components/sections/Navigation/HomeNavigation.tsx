@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { NavigationItem, NavigationMenu } from '@/components/navigation';
-import Button from '@/components/ui/button';
+import Button from '@/components/ui/Button';
 
 type SectionKey = 'home' | 'about' | 'skills' | 'projects' | 'contact' | 'hero';
 
