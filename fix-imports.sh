@@ -94,4 +94,3 @@ for dir in "${SRC_DIRS[@]}"; do
 done
 
 echo "✅ Revisión finalizada. $([[ "$DRY_RUN" == true ]] && echo 'No se hicieron cambios.')"
-
