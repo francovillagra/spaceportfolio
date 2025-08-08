@@ -1,5 +1,3 @@
-// app/layout.tsx
-
 'use client';
 
 import './globals.css';
@@ -7,6 +5,7 @@ import { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import ParticlesBackground from '@/components/ui/ParticlesBackground';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,7 +15,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es" className={inter.className}>
       <head />
-      <body className="bg-[#030014] text-white">
+      <body className="bg-[#030014] text-white relative">
+        
+        {/* Fondo de partículas */}
+        <ParticlesBackground />
+
         <AnimatePresence mode="wait">
           <motion.div
             key={pathname}
