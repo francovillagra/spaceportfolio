@@ -5,9 +5,7 @@ import { motion } from 'framer-motion';
 import { slideInFromTop, slideInFromLeft, slideInFromRight } from '@/utils/motion';
 import { SparklesIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
-
-import Button from '@/components/ui/button';
-import { Card } from '@/components/ui/Card';
+import Button from '@/components/ui/Button';
 import Title from '@/components/ui/Title';
 import Paragraph from '@/components/ui/Paragraph';
 
@@ -22,12 +20,12 @@ const HeroSection = () => {
       <div className="w-full flex flex-col gap-5 justify-center text-start">
         {/* Bienvenida */}
         <motion.div variants={slideInFromTop(0.5)}>
-          <Card className="py-2 px-3 border border-[#7042f88b] opacity-90 flex items-center Welcome-box">
+          <div className="py-2 px-3 border border-[#7042f88b] opacity-90 flex items-center Welcome-box">
             <SparklesIcon className="text-[#b49bff] mr-2 h-4 w-4" />
             <Paragraph size="xs" className="text-white font-medium uppercase tracking-tight font-sans">
               Portfolio Desarrollador Fullstack
             </Paragraph>
-          </Card>
+            </div>
         </motion.div>
 
         {/* Título principal */}
