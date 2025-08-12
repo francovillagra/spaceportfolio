@@ -1,12 +1,11 @@
-'use client';
+"use client";
 
-import { useCallback } from 'react';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import type { Engine } from 'tsparticles-engine';
+import { useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 
 export default function ParticlesBackground() {
-  const particlesInit = useCallback(async (engine: Engine) => {
+  const particlesInit = useCallback(async (engine: any) => {
     await loadFull(engine);
   }, []);
 
@@ -17,58 +16,45 @@ export default function ParticlesBackground() {
         init={particlesInit}
         options={{
           background: {
-            color: 'transparent',
+            color: { value: "#030014" }, // tu color de fondo
           },
-          fullScreen: { enable: false },
           fpsLimit: 60,
           interactivity: {
             events: {
-              onHover: {
-                enable: true,
-                mode: 'repulse', // se alejan del mouse
-              },
-              onClick: {
-                enable: true,
-                mode: 'push', // agrega partículas al click
-              },
+              onClick: { enable: true, mode: "push" }, // clic agrega partículas
+              onHover: { enable: true, mode: "repulse" }, // hover las repele
               resize: true,
             },
             modes: {
-              repulse: {
-                distance: 100,
-                duration: 0.4,
-              },
-              push: {
-                quantity: 3,
-              },
+              push: { quantity: 4 },
+              repulse: { distance: 100, duration: 0.4 },
             },
           },
           particles: {
-            color: { value: '#ffffff' },
+            color: { value: "#ffffff" },
             links: {
-              enable: true,
-              color: '#ffffff',
+              color: "#ffffff",
               distance: 150,
+              enable: true,
               opacity: 0.3,
               width: 1,
             },
+            collisions: { enable: false },
             move: {
+              direction: "none",
               enable: true,
-              speed: 1,
-              direction: 'none',
+              outModes: { default: "out" },
               random: false,
+              speed: 1,
               straight: false,
-              outModes: 'out',
             },
             number: {
-              value: 80,
               density: { enable: true, area: 800 },
+              value: 40,
             },
-            opacity: { value: 0.6 },
-            shape: { type: 'circle' },
-            size: {
-              value: { min: 1, max: 3 },
-            },
+            opacity: { value: 0.5 },
+            shape: { type: "circle" },
+            size: { value: { min: 1, max: 3 } },
           },
           detectRetina: true,
         }}
