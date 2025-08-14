@@ -15,11 +15,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es" className={inter.className}>
       <head />
-      <body className="bg-[#030014] text-white relative">
+      <body className="bg-[#030014] text-white relative overflow-hidden">
         
-        {/* Fondo de partículas */}
-        <ParticlesBackground />
+        {/* Fondo de partículas - Siempre fijo atrás */}
+        <div className="fixed inset-0 -z-10">
+          <ParticlesBackground />
+        </div>
 
+        {/* Contenido con animación de transición */}
         <AnimatePresence mode="wait">
           <motion.div
             key={pathname}
@@ -27,10 +30,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.4 }}
+            className="relative z-10"
           >
             {children}
           </motion.div>
         </AnimatePresence>
+        
       </body>
     </html>
   );
