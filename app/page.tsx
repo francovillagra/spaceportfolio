@@ -3,15 +3,19 @@
 import Link from 'next/link';
 import HeroSection from '@/components/sections/Hero';
 import { ProjectsSection } from '@/components/sections/Projects';
+import ParticlesBackground from '@/components/ui/ParticlesBackground';
 
 export default function Home() {
   return (
     <>
+      {/* Fondo de partículas */}
+      <ParticlesBackground />
+
       {/* Sección principal del Hero */}
       <HeroSection />
 
       {/* Bienvenida + links a secciones individuales */}
-      <main className="min-h-screen flex flex-col items-center justify-center bg-[#030014] text-white p-8">
+      <main className="min-h-screen flex flex-col items-center justify-center text-white p-8 relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center">
           Bienvenido a mi Portfolio
         </h1>
@@ -40,7 +44,7 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Sección de proyectos con ID y animación */}
+      {/* Sección de proyectos */}
       <ProjectsSection />
     </>
   );
