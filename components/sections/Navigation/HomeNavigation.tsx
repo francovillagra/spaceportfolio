@@ -22,6 +22,7 @@ export default function HomeNavigation({ setActiveSection }: HomeNavigationProps
 
   return (
     <header className="bg-gray-900 text-white px-4 py-3 flex items-center justify-between shadow-md sticky top-0 z-50">
+      {/* Logo / Nombre */}
       <div
         className="text-xl font-bold cursor-pointer hover:text-purple-400 transition-colors"
         onClick={() => handleClick('hero')}
