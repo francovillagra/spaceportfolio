@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import HeroSection from '@/components/Sections/Hero';
-import { ProjectsSection } from '@/components/Sections/Projects';
+import HeroSection from '@/components/sections/Hero';
+import { ProjectsSection } from '@/components/sections/Projects';
 
 export default function Home() {
   return (
