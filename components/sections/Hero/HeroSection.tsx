@@ -46,7 +46,7 @@ const HeroSection = () => {
         {/* Descripción */}
         <motion.div variants={slideInFromLeft(0.8)}>
           <Paragraph className="text-gray-400 my-5 max-w-[600px] text-lg">
-            Bienvenido a mi laboratorio digital, donde experimento con ideas, construyo soluciones y aprendo algo nuevo cada día. Disfruto resolver problemas con tecnología y transformar ideas en soluciones funcionales. Te invito a conocer mis proyectos.
+            Bienvenido a mi laboratorio digital, donde experimento con ideas, construyo soluciones y aprendo cada día. Me interesa resolver problemas y transformar ideas en soluciones funcionales. Te invito a conocer mis proyectos.
           </Paragraph>
         </motion.div>
 
